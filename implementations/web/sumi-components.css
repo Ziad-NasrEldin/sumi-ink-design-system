@@ -1,0 +1,217 @@
+/* Reference web components for Sumi-Ink v0.1.0. */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--sumi-paper);
+  color: var(--sumi-ink);
+  font-family: var(--sumi-typography-body-family);
+}
+
+button,
+input,
+select,
+textarea { font: inherit; }
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role="menuitem"]:focus-visible {
+  outline: var(--sumi-shape-focus-width) solid var(--sumi-seal);
+  outline-offset: var(--sumi-shape-focus-offset);
+}
+
+.sumi-showcase {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0 72px;
+}
+
+.sumi-kicker {
+  margin: 0 0 var(--sumi-spacing-8);
+  color: var(--sumi-muted);
+  font-family: var(--sumi-typography-label-family);
+  font-size: 10px;
+  letter-spacing: var(--sumi-typography-label-tracking);
+  text-transform: uppercase;
+}
+
+.sumi-showcase h1,
+.sumi-showcase h2 {
+  font-family: var(--sumi-typography-display-family);
+  font-weight: 400;
+}
+
+.sumi-showcase h1 { margin: 0; font-size: clamp(34px, 6vw, 58px); }
+.sumi-showcase h2 { margin: 0 0 var(--sumi-spacing-14); font-size: 24px; }
+.sumi-showcase p { max-width: 68ch; line-height: var(--sumi-typography-body-line-height); }
+
+.sumi-showcase__header {
+  border-bottom: 1px solid var(--sumi-ink);
+  padding-bottom: 24px;
+}
+
+.sumi-showcase__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.sumi-sheet {
+  min-width: 0;
+  border: 1px solid var(--sumi-rule);
+  border-top: 3px solid var(--sumi-ink);
+  padding: 20px;
+  background: var(--sumi-paper);
+}
+
+.sumi-sheet--wide { grid-column: 1 / -1; }
+
+.sumi-field {
+  display: grid;
+  gap: 7px;
+  margin-top: 16px;
+}
+
+.sumi-field label,
+.sumi-control-label {
+  color: var(--sumi-muted);
+  font-family: var(--sumi-typography-label-family);
+  font-size: var(--sumi-typography-label-size);
+  letter-spacing: var(--sumi-typography-label-tracking);
+  text-transform: uppercase;
+}
+
+.sumi-field input,
+.sumi-field select {
+  width: 100%;
+  min-height: var(--sumi-component-sizes-touch-target);
+  border: 1px solid var(--sumi-ink);
+  border-radius: var(--sumi-shape-radius);
+  padding: 9px 11px;
+  background: var(--sumi-paper);
+  color: var(--sumi-ink);
+}
+
+.sumi-field input:disabled,
+.sumi-field select:disabled {
+  background: var(--sumi-mist);
+  color: var(--sumi-muted);
+}
+
+.sumi-button {
+  min-height: var(--sumi-component-sizes-touch-target);
+  border: 1px solid var(--sumi-ink);
+  border-radius: var(--sumi-shape-radius);
+  padding: 9px 14px;
+  background: var(--sumi-ink);
+  color: var(--sumi-paper);
+  cursor: pointer;
+  transition: background-color var(--sumi-motion-control) var(--sumi-motion-easing), border-color var(--sumi-motion-control) var(--sumi-motion-easing), transform var(--sumi-motion-instant) var(--sumi-motion-easing);
+}
+
+.sumi-button:hover { background: var(--sumi-seal); border-color: var(--sumi-seal); }
+.sumi-button:active { transform: translateY(1px); }
+.sumi-button--quiet { background: var(--sumi-paper); color: var(--sumi-ink); }
+.sumi-button--destructive { background: var(--sumi-seal-deep); border-color: var(--sumi-seal-deep); }
+
+.sumi-dropdown {
+  position: relative;
+  width: min(100%, 320px);
+}
+
+.sumi-dropdown__trigger {
+  display: flex;
+  width: 100%;
+  min-height: var(--sumi-component-sizes-touch-target);
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid var(--sumi-ink);
+  border-radius: var(--sumi-shape-radius);
+  padding: 9px 11px;
+  background: var(--sumi-paper);
+  color: var(--sumi-ink);
+  cursor: pointer;
+  text-align: left;
+}
+
+.sumi-dropdown__trigger[aria-expanded="true"] { box-shadow: 3px 3px 0 var(--sumi-seal-wash); }
+.sumi-dropdown__chevron { font-size: 12px; transition: transform var(--sumi-motion-control) var(--sumi-motion-easing); }
+.sumi-dropdown__trigger[aria-expanded="true"] .sumi-dropdown__chevron { transform: rotate(180deg); }
+
+.sumi-dropdown__menu {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 4px);
+  inset-inline-start: 0;
+  min-width: var(--sumi-component-sizes-dropdown-minimum-width);
+  max-width: min(100vw - 32px, 360px);
+  overflow: hidden;
+  border: 1px solid var(--sumi-ink);
+  border-radius: var(--sumi-shape-radius);
+  background: var(--sumi-paper);
+  box-shadow: 4px 4px 0 var(--sumi-rule);
+}
+
+.sumi-dropdown__option {
+  display: flex;
+  width: 100%;
+  min-height: var(--sumi-component-sizes-compact-target);
+  align-items: center;
+  gap: 9px;
+  border: 0;
+  padding: 7px 10px;
+  background: var(--sumi-paper);
+  color: var(--sumi-ink);
+  cursor: pointer;
+  text-align: start;
+}
+
+.sumi-dropdown__option:hover { background: var(--sumi-soft-paper); }
+.sumi-dropdown__option[aria-selected="true"] { background: var(--sumi-ink); color: var(--sumi-paper); }
+.sumi-dropdown__option--destructive:hover { background: var(--sumi-seal-wash); color: var(--sumi-seal-deep); }
+.sumi-dropdown__option + .sumi-dropdown__option { border-top: 1px solid var(--sumi-pale-rule); }
+.sumi-dropdown__state { margin-inline-start: auto; font-family: var(--sumi-typography-label-family); font-size: 8px; letter-spacing: .12em; }
+
+.sumi-status {
+  display: inline-flex;
+  min-height: 26px;
+  align-items: center;
+  border: 1px solid var(--sumi-rule);
+  border-radius: 0;
+  padding: 4px 7px;
+  background: var(--sumi-mist);
+  color: var(--sumi-ink);
+  font-family: var(--sumi-typography-label-family);
+  font-size: 9px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.sumi-status--healthy { background: var(--sumi-okay); color: var(--sumi-paper); }
+.sumi-status--attention { border-color: var(--sumi-seal); background: var(--sumi-seal-wash); color: var(--sumi-seal-deep); }
+.sumi-status--error { border-color: var(--sumi-seal-deep); background: var(--sumi-danger-field); color: var(--sumi-seal-deep); }
+
+.sumi-ledger {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.sumi-ledger th,
+.sumi-ledger td { border-bottom: 1px solid var(--sumi-pale-rule); padding: 10px 8px; text-align: start; }
+.sumi-ledger th { background: var(--sumi-mist); color: var(--sumi-muted); font-family: var(--sumi-typography-label-family); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+
+@media (max-width: 720px) {
+  .sumi-showcase { width: min(100% - 24px, 560px); padding-top: 28px; }
+  .sumi-showcase__grid { grid-template-columns: 1fr; }
+  .sumi-sheet--wide { grid-column: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: var(--sumi-motion-reduced) !important; animation-duration: var(--sumi-motion-reduced) !important; }
+}

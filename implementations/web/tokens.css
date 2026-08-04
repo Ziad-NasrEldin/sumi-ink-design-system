@@ -1,0 +1,57 @@
+/* Generated from tokens.json for Sumi-Ink v0.1.0. Do not edit by hand. */
+:root {
+  --sumi-ink: #0D0A0A;
+  --sumi-paper: #FFFFFF;
+  --sumi-soft-paper: #FAFAFA;
+  --sumi-mist: #F5F5F5;
+  --sumi-wash: #F7F5F4;
+  --sumi-pale-rule: #EDEDED;
+  --sumi-rule: #E0E0E0;
+  --sumi-muted: #545554;
+  --sumi-seal: #C23A2E;
+  --sumi-seal-deep: #8F211A;
+  --sumi-seal-wash: #F5E5E3;
+  --sumi-okay: #2F3A2F;
+  --sumi-danger-field: #FFEDED;
+  --sumi-typography-display-family: Times New Roman, Baskerville, Georgia, serif;
+  --sumi-typography-body-family: Hiragino Mincho ProN, Yu Mincho, Times New Roman, Georgia, serif;
+  --sumi-typography-label-family: SFMono-Regular, Consolas, Liberation Mono, monospace;
+  --sumi-typography-display-size: 46px;
+  --sumi-typography-headline-size: 28px;
+  --sumi-typography-title-size: 18px;
+  --sumi-typography-body-size: 14px;
+  --sumi-typography-label-size: 10px;
+  --sumi-typography-body-line-height: 1.58;
+  --sumi-typography-label-tracking: 0.14em;
+  --sumi-spacing-1: 1px;
+  --sumi-spacing-2: 2px;
+  --sumi-spacing-4: 4px;
+  --sumi-spacing-6: 6px;
+  --sumi-spacing-7: 7px;
+  --sumi-spacing-8: 8px;
+  --sumi-spacing-10: 10px;
+  --sumi-spacing-12: 12px;
+  --sumi-spacing-14: 14px;
+  --sumi-spacing-16: 16px;
+  --sumi-spacing-18: 18px;
+  --sumi-spacing-24: 24px;
+  --sumi-spacing-32: 32px;
+  --sumi-shape-radius: 0px;
+  --sumi-shape-border-width: 1px;
+  --sumi-shape-focus-width: 2px;
+  --sumi-shape-focus-offset: 3px;
+  --sumi-component-sizes-touch-target: 44px;
+  --sumi-component-sizes-compact-target: 34px;
+  --sumi-component-sizes-dropdown-minimum-width: 216px;
+  --sumi-component-sizes-icon-small: 14px;
+  --sumi-component-sizes-icon-medium: 18px;
+  --sumi-motion-instant: 80ms;
+  --sumi-motion-control: 160ms;
+  --sumi-motion-panel: 200ms;
+  --sumi-motion-reduced: 0.001ms;
+  --sumi-motion-easing: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --sumi-breakpoints-compact: 720px;
+  --sumi-breakpoints-tablet: 980px;
+  --sumi-breakpoints-wide: 1280px;
+}
+

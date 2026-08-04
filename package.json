@@ -1,0 +1,12 @@
+{
+  "name": "sumi-ink-design-system",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-tokens.mjs",
+    "validate": "node scripts/validate-design-system.mjs",
+    "validate:projects": "node scripts/check-project-adapters.mjs \"../Master Lance\" \"../Zoid Coach\" \"../Financial Transactions\"",
+    "check": "npm run generate && npm run validate && npm run validate:projects"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1.0",
+  "components": [
+    {"id":"app-shell","name":"App shell","status":"approved","implementation":"reference","platforms":["web","swiftui"],"spec":"components/navigation.md"},
+    {"id":"command-index","name":"Command index","status":"approved","implementation":"reference","platforms":["web","swiftui"],"spec":"components/navigation.md"},
+    {"id":"buttons","name":"Buttons","status":"approved","implementation":"reference","platforms":["web","swiftui"],"spec":"components/buttons.md"},
+    {"id":"fields","name":"Text fields","status":"approved","implementation":"reference","platforms":["web","swiftui"],"spec":"components/fields.md"},
+    {"id":"dropdown-menus","name":"Dropdown menus and selectors","status":"approved","implementation":"reference","platforms":["web","swiftui"],"spec":"components/dropdown-menus.md"},
+    {"id":"segmented-controls","name":"Segmented controls","status":"approved","implementation":"reference","platforms":["web","swiftui"],"spec":"components/selection.md"},
+    {"id":"toggles","name":"Toggles and check controls","status":"approved","implementation":"reference","platforms":["web","swiftui"],"spec":"components/selection.md"},
+    {"id":"date-time","name":"Date and time controls","status":"approved","implementation":"reference","platforms":["web","swiftui"],"spec":"components/date-time.md"},
+    {"id":"tabs","name":"Tabs","status":"approved","implementation":"reference","platforms":["web","swiftui"],"spec":"components/navigation.md"},
+    {"id":"status-stamps","name":"Status stamps","status":"approved","implementation":"reference","platforms":["web","swiftui"],"spec":"components/feedback.md"},
+    {"id":"toast-feedback","name":"Toast and inline feedback","status":"approved","implementation":"reference","platforms":["web","swiftui"],"spec":"components/feedback.md"},
+    {"id":"overlays","name":"Dialogs, sheets, and popovers","status":"approved","implementation":"reference","platforms":["web","swiftui"],"spec":"components/overlays.md"},
+    {"id":"ledgers","name":"Ledger tables and ruled rows","status":"approved","implementation":"reference","platforms":["web","swiftui"],"spec":"components/data-display.md"},
+    {"id":"cards","name":"Paper sheets and slips","status":"approved","implementation":"reference","platforms":["web","swiftui"],"spec":"components/data-display.md"},
+    {"id":"empty-loading-error","name":"Empty, loading, and error states","status":"approved","implementation":"reference","platforms":["web","swiftui"],"spec":"components/feedback.md"},
+    {"id":"icons","name":"Line iconography","status":"approved","implementation":"guidance","platforms":["web","swiftui"],"spec":"components/navigation.md"},
+    {"id":"charts","name":"Evidence charts","status":"approved","implementation":"guidance","platforms":["web","swiftui"],"spec":"components/data-display.md"}
+  ]
+}

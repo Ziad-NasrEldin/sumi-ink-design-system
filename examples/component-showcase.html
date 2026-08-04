@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sumi-Ink v0.1.0 component showcase</title>
+    <link rel="stylesheet" href="../implementations/web/tokens.css" />
+    <link rel="stylesheet" href="../implementations/web/sumi-components.css" />
+  </head>
+  <body>
+    <main class="sumi-showcase">
+      <header class="sumi-showcase__header">
+        <p class="sumi-kicker">Sumi-Ink Command System · v0.1.0</p>
+        <h1>Private command ledger</h1>
+        <p>Reference surfaces for approved foundations, component states, and interaction contracts.</p>
+      </header>
+
+      <section class="sumi-showcase__grid" aria-label="Component examples">
+        <article class="sumi-sheet">
+          <p class="sumi-kicker">Dropdown menu · open state</p>
+          <h2>Choose transaction type</h2>
+          <div class="sumi-dropdown" data-dropdown data-selected-label="SELECTED">
+            <button class="sumi-dropdown__trigger" type="button" aria-haspopup="listbox" aria-expanded="true" aria-controls="transaction-type-options">
+              <span data-dropdown-value>Manual income</span>
+              <span class="sumi-dropdown__chevron" aria-hidden="true">⌄</span>
+            </button>
+            <div class="sumi-dropdown__menu" id="transaction-type-options" role="listbox" aria-label="Transaction type">
+              <button class="sumi-dropdown__option" type="button" role="option" aria-selected="true" data-value="Manual income">
+                <span>Manual income</span><span class="sumi-dropdown__state">SELECTED</span>
+              </button>
+              <button class="sumi-dropdown__option" type="button" role="option" aria-selected="false" data-value="Manual expense">
+                <span>Manual expense</span><span class="sumi-dropdown__state"></span>
+              </button>
+              <button class="sumi-dropdown__option" type="button" role="option" aria-selected="false" data-value="Cash transfer">
+                <span>Cash transfer</span><span class="sumi-dropdown__state"></span>
+              </button>
+              <button class="sumi-dropdown__option sumi-dropdown__option--destructive" type="button" role="option" aria-selected="false" data-value="Adjustment">
+                <span>Adjustment</span><span class="sumi-dropdown__state"></span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="sumi-sheet">
+          <p class="sumi-kicker">Fields · state language</p>
+          <h2>Ledger inputs</h2>
+          <div class="sumi-field">
+            <label for="amount">Amount</label>
+            <input id="amount" value="1,240.00" />
+          </div>
+          <div class="sumi-field">
+            <label for="description">Description</label>
+            <input id="description" value="Approved bank debit" />
+          </div>
+        </article>
+
+        <article class="sumi-sheet" dir="rtl" lang="ar">
+          <p class="sumi-kicker">RTL · Arabic reading order</p>
+          <h2>نوع العملية</h2>
+          <div class="sumi-dropdown" data-dropdown data-selected-label="محدد">
+            <button class="sumi-dropdown__trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="rtl-transaction-type-options">
+              <span data-dropdown-value>دخل يدوي</span>
+              <span class="sumi-dropdown__chevron" aria-hidden="true">⌄</span>
+            </button>
+            <div class="sumi-dropdown__menu" id="rtl-transaction-type-options" role="listbox" aria-label="نوع العملية" hidden>
+              <button class="sumi-dropdown__option" type="button" role="option" aria-selected="true" data-value="دخل يدوي">
+                <span>دخل يدوي</span><span class="sumi-dropdown__state">محدد</span>
+              </button>
+              <button class="sumi-dropdown__option" type="button" role="option" aria-selected="false" data-value="مصروف يدوي">
+                <span>مصروف يدوي</span><span class="sumi-dropdown__state"></span>
+              </button>
+              <button class="sumi-dropdown__option" type="button" role="option" aria-selected="false" data-value="تحويل نقدي">
+                <span>تحويل نقدي</span><span class="sumi-dropdown__state"></span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="sumi-sheet">
+          <p class="sumi-kicker">Actions · written consequence</p>
+          <h2>Command controls</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <button class="sumi-button" type="button">Approve</button>
+            <button class="sumi-button sumi-button--quiet" type="button">Review later</button>
+            <button class="sumi-button sumi-button--destructive" type="button">Delete</button>
+          </div>
+        </article>
+
+        <article class="sumi-sheet">
+          <p class="sumi-kicker">State stamps · color plus language</p>
+          <h2>System states</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span class="sumi-status sumi-status--healthy">Healthy</span>
+            <span class="sumi-status sumi-status--attention">Needs review</span>
+            <span class="sumi-status sumi-status--error">Unavailable</span>
+          </div>
+        </article>
+
+        <article class="sumi-sheet sumi-sheet--wide">
+          <p class="sumi-kicker">Ledger · semantic rows</p>
+          <h2>Approved activity</h2>
+          <table class="sumi-ledger">
+            <thead><tr><th scope="col">Source</th><th scope="col">State</th><th scope="col">Amount</th></tr></thead>
+            <tbody>
+              <tr><td>Nile Air Store</td><td><span class="sumi-status sumi-status--healthy">Approved</span></td><td>EGP 1,240.00</td></tr>
+              <tr><td>Manual entry</td><td><span class="sumi-status">Waiting</span></td><td>EGP 320.00</td></tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+    </main>
+
+    <script>
+      const closeDropdown = (dropdown) => {
+        const trigger = dropdown.querySelector('.sumi-dropdown__trigger');
+        const menu = dropdown.querySelector('.sumi-dropdown__menu');
+        trigger.setAttribute('aria-expanded', 'false');
+        menu.hidden = true;
+      };
+
+      document.querySelectorAll('[data-dropdown]').forEach((dropdown) => {
+        const trigger = dropdown.querySelector('.sumi-dropdown__trigger');
+        const menu = dropdown.querySelector('.sumi-dropdown__menu');
+        const value = dropdown.querySelector('[data-dropdown-value]');
+        const options = [...dropdown.querySelectorAll('[role="option"]')];
+
+        trigger.addEventListener('click', () => {
+          const open = trigger.getAttribute('aria-expanded') === 'true';
+          trigger.setAttribute('aria-expanded', String(!open));
+          menu.hidden = open;
+          if (!open) options[0]?.focus();
+        });
+
+        options.forEach((option) => option.addEventListener('click', () => {
+          const selectedLabel = dropdown.dataset.selectedLabel || 'SELECTED';
+          options.forEach((candidate) => {
+            const selected = candidate === option;
+            candidate.setAttribute('aria-selected', String(selected));
+            candidate.querySelector('.sumi-dropdown__state').textContent = selected ? selectedLabel : '';
+          });
+          value.textContent = option.dataset.value;
+          closeDropdown(dropdown);
+          trigger.focus();
+        }));
+
+        dropdown.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            closeDropdown(dropdown);
+            trigger.focus();
+          }
+          if (event.key === 'ArrowDown' && document.activeElement === trigger) {
+            event.preventDefault();
+            trigger.setAttribute('aria-expanded', 'true');
+            menu.hidden = false;
+            options[0]?.focus();
+          }
+        });
+      });
+
+      document.addEventListener('click', (event) => {
+        document.querySelectorAll('[data-dropdown]').forEach((dropdown) => {
+          if (!dropdown.contains(event.target)) closeDropdown(dropdown);
+        });
+      });
+    </script>
+  </body>
+</html>
