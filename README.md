@@ -1,29 +1,41 @@
-# Sumi-Ink Command System
+# Sumi-Ink
 
-Sumi-Ink is the canonical design system for the user's product family.
+A quiet white-paper design system for products that need operational clarity, truthful state, and deliberate human decisions.
 
-The current release is `v0.1.0`.
+**Who it's for.** Designers and engineers building MaVoid product surfaces — web and SwiftUI — that should feel like a private command ledger, not a generic SaaS dashboard.
 
-The system defines visual foundations, interaction contracts, component behavior, accessibility expectations, platform mappings, and project adoption rules.
+## What you get
 
-The root [DESIGN.md](DESIGN.md) is the human-readable source of truth.
+- A product-independent visual and interaction contract
+- Human-readable rules in [DESIGN.md](DESIGN.md)
+- Machine-readable values in [tokens.json](tokens.json)
+- Component inventory in [components/registry.json](components/registry.json)
+- Generated web CSS and SwiftUI token/component references
 
-The machine-readable design values live in [tokens.json](tokens.json).
+## Start here
 
-The machine-readable component inventory lives in [components/registry.json](components/registry.json).
+1. Read the contract: [DESIGN.md](DESIGN.md)
+2. Use the tokens: [tokens.json](tokens.json)
+3. Browse components: [components/](components/)
+4. Web reference: [implementations/web/](implementations/web/)
+5. SwiftUI reference: [implementations/swiftui/](implementations/swiftui/)
 
-The web and SwiftUI reference outputs are generated from the token source.
+```bash
+npm run check
+```
 
-## Validation
+That regenerates platform outputs and validates the canonical system.
 
-Run `npm run check` to regenerate platform outputs and validate the canonical system plus the three connected projects.
+## How it works
 
-The project adapters must identify the canonical version and point to the sibling Sumi-Ink repository.
+White paper carries the workspace. Black ink defines architecture and primary action. Pale rules organize hierarchy. A single red seal marks attention, approval, and consequence.
 
-## Adoption rule
+Projects may add product language, workflows, and product-specific patterns. They may not silently redefine global tokens or approved component behavior. Every intentional deviation belongs in that project's own `DESIGN.md`.
 
-Projects may add product language, product workflows, and product-specific patterns.
+Current release: `v0.1.0`.
 
-Projects may not silently redefine global tokens or approved component behavior.
+---
 
-Every intentional deviation must be documented in the project's root `DESIGN.md`.
+Built by [Ziad Ahmed](https://github.com/Ziad-NasrEldin) at [MaVoid](https://mavoid.com).
+
+[Website](https://mavoid.com) · [LinkedIn](https://linkedin.com/in/ziad-ahmed-634202332) · [GitHub](https://github.com/Ziad-NasrEldin)
