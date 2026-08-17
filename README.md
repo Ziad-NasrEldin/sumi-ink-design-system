@@ -1,6 +1,10 @@
 # Sumi-Ink
 
 <p align="center">
+  <img src="docs/hero.png" alt="Sumi-Ink component showcase" width="900">
+</p>
+
+<p align="center">
   <img src="proof/sumi-ink-desktop.png" alt="Sumi-Ink" width="900">
 </p>
 <p align="center">
@@ -18,6 +22,10 @@ A quiet white-paper design system for products that need operational clarity, tr
 - Machine-readable values in [tokens.json](tokens.json)
 - Component inventory in [components/registry.json](components/registry.json)
 - Generated web CSS and SwiftUI token/component references
+
+## Try it
+
+Live showcase: [sumi-ink-design-system.vercel.app/examples/component-showcase.html](https://sumi-ink-design-system.vercel.app/examples/component-showcase.html)
 
 ## Start here
 
