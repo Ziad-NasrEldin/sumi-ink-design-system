@@ -1,5 +1,12 @@
 # Sumi-Ink
 
+<p align="center">
+  <img src="proof/sumi-ink-desktop.png" alt="Sumi-Ink" width="900">
+</p>
+<p align="center">
+  <img src="proof/sumi-ink-mobile.png" alt="Sumi-Ink mobile" width="900">
+</p>
+
 A quiet white-paper design system for products that need operational clarity, truthful state, and deliberate human decisions.
 
 **Who it's for.** Designers and engineers building MaVoid product surfaces — web and SwiftUI — that should feel like a private command ledger, not a generic SaaS dashboard.
