@@ -24,6 +24,10 @@ The canonical machine-readable values live in `tokens.json`.
 
 The canonical component inventory lives in `components/registry.json`.
 
+The canonical design graph lives in `components/design-graph.json`.
+
+The generated design graph lives in `examples/design-graph.html`.
+
 The canonical component contracts live in `components/`.
 
 The web reference outputs live in `implementations/web/`.
@@ -254,6 +258,8 @@ An approved component needs proof in the relevant platform before it is treated 
 
 Proof should cover the normal state, focus state, selected state, destructive or error state, compact layout, and reduced motion when applicable.
 
+A visible UI change needs a matching design graph cell before it is treated as approved.
+
 Browser proof must use the built-in in-app Browser.
 
 Native proof must identify the signed or installed artifact when release confidence matters.
@@ -315,5 +321,6 @@ Do not create product-specific colors that compete with Sumi Seal.
 - Web and SwiftUI reference behavior is documented.
 - Keyboard, VoiceOver, reduced motion, mobile, and RTL behavior are addressed.
 - Visual proof exists for visible UI changes.
+- The related design graph cell exists in `components/design-graph.json` and `examples/design-graph.html`.
 - Existing project adapters remain on a known canonical version.
 - `npm run check` passes.

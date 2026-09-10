@@ -18,24 +18,33 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
-[role="menuitem"]:focus-visible {
+[role="menuitem"]:focus-visible,
+[role="option"]:focus-visible,
+[role="tab"]:focus-visible,
+.is-focus {
   outline: var(--sumi-shape-focus-width) solid var(--sumi-seal);
   outline-offset: var(--sumi-shape-focus-offset);
+}
+
+.sumi-kicker,
+.sumi-state,
+.sumi-control-label,
+.sumi-field label {
+  color: var(--sumi-muted);
+  font-family: var(--sumi-typography-label-family);
+  font-size: var(--sumi-typography-label-size);
+  letter-spacing: var(--sumi-typography-label-tracking);
+  text-transform: uppercase;
+}
+
+.sumi-state {
+  color: inherit;
 }
 
 .sumi-showcase {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
   padding: 48px 0 72px;
-}
-
-.sumi-kicker {
-  margin: 0 0 var(--sumi-spacing-8);
-  color: var(--sumi-muted);
-  font-family: var(--sumi-typography-label-family);
-  font-size: 10px;
-  letter-spacing: var(--sumi-typography-label-tracking);
-  text-transform: uppercase;
 }
 
 .sumi-showcase h1,
@@ -70,19 +79,113 @@ textarea:focus-visible,
 
 .sumi-sheet--wide { grid-column: 1 / -1; }
 
+.sumi-slip {
+  min-width: 0;
+  border: 1px solid var(--sumi-rule);
+  padding: 16px;
+  background: var(--sumi-soft-paper);
+}
+
+.sumi-slip__title {
+  margin: 0 0 8px;
+  font-family: var(--sumi-typography-display-family);
+  font-size: var(--sumi-typography-title-size);
+  font-weight: 400;
+}
+
+/* Buttons */
+
+.sumi-button {
+  display: inline-flex;
+  min-height: var(--sumi-component-sizes-touch-target);
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--sumi-ink);
+  border-radius: var(--sumi-shape-radius);
+  padding: 9px 14px;
+  background: var(--sumi-ink);
+  color: var(--sumi-paper);
+  cursor: pointer;
+  transition: background-color var(--sumi-motion-control) var(--sumi-motion-easing), border-color var(--sumi-motion-control) var(--sumi-motion-easing), color var(--sumi-motion-control) var(--sumi-motion-easing);
+}
+
+.sumi-button:hover,
+.sumi-button.is-hover {
+  background: var(--sumi-seal);
+  border-color: var(--sumi-seal);
+  color: var(--sumi-paper);
+}
+
+.sumi-button:active { background: var(--sumi-seal-deep); border-color: var(--sumi-seal-deep); }
+
+.sumi-button--quiet {
+  background: var(--sumi-paper);
+  color: var(--sumi-ink);
+}
+
+.sumi-button--quiet:hover,
+.sumi-button--quiet.is-hover {
+  background: var(--sumi-mist);
+  border-color: var(--sumi-ink);
+  color: var(--sumi-ink);
+}
+
+.sumi-button--attention {
+  background: var(--sumi-seal);
+  border-color: var(--sumi-seal);
+  color: var(--sumi-paper);
+}
+
+.sumi-button--attention:hover,
+.sumi-button--attention.is-hover {
+  background: var(--sumi-seal-deep);
+  border-color: var(--sumi-seal-deep);
+  color: var(--sumi-paper);
+}
+
+.sumi-button--destructive {
+  background: var(--sumi-seal-deep);
+  border-color: var(--sumi-seal-deep);
+  color: var(--sumi-paper);
+}
+
+.sumi-button--destructive:hover,
+.sumi-button--destructive.is-hover {
+  background: var(--sumi-seal);
+  border-color: var(--sumi-seal);
+  color: var(--sumi-paper);
+}
+
+.sumi-button--compact {
+  min-height: var(--sumi-component-sizes-compact-target);
+  padding: 6px 10px;
+}
+
+.sumi-button:disabled,
+.sumi-button.is-disabled,
+.sumi-button.is-disabled:hover,
+.sumi-button:disabled:hover {
+  background: var(--sumi-mist);
+  border-color: var(--sumi-rule);
+  color: var(--sumi-muted);
+  cursor: not-allowed;
+}
+
+.sumi-button.is-loading,
+.sumi-button.is-loading:hover {
+  background: var(--sumi-mist);
+  border-color: var(--sumi-rule);
+  color: var(--sumi-muted);
+  cursor: progress;
+}
+
+/* Fields */
+
 .sumi-field {
   display: grid;
   gap: 7px;
-  margin-top: 16px;
-}
-
-.sumi-field label,
-.sumi-control-label {
-  color: var(--sumi-muted);
-  font-family: var(--sumi-typography-label-family);
-  font-size: var(--sumi-typography-label-size);
-  letter-spacing: var(--sumi-typography-label-tracking);
-  text-transform: uppercase;
+  margin-top: 0;
 }
 
 .sumi-field input,
@@ -96,27 +199,42 @@ textarea:focus-visible,
   color: var(--sumi-ink);
 }
 
+.sumi-field--compact input,
+.sumi-field--compact select {
+  min-height: var(--sumi-component-sizes-compact-target);
+  padding: 6px 9px;
+}
+
+.sumi-field.is-focus input,
+.sumi-field.is-focus select {
+  border-color: var(--sumi-ink);
+  box-shadow: inset 3px 0 0 var(--sumi-seal);
+}
+
 .sumi-field input:disabled,
-.sumi-field select:disabled {
+.sumi-field select:disabled,
+.sumi-field.is-disabled input,
+.sumi-field.is-disabled select {
   background: var(--sumi-mist);
   color: var(--sumi-muted);
+  border-color: var(--sumi-rule);
 }
 
-.sumi-button {
-  min-height: var(--sumi-component-sizes-touch-target);
-  border: 1px solid var(--sumi-ink);
-  border-radius: var(--sumi-shape-radius);
-  padding: 9px 14px;
-  background: var(--sumi-ink);
-  color: var(--sumi-paper);
-  cursor: pointer;
-  transition: background-color var(--sumi-motion-control) var(--sumi-motion-easing), border-color var(--sumi-motion-control) var(--sumi-motion-easing), transform var(--sumi-motion-instant) var(--sumi-motion-easing);
+.sumi-field.is-error input,
+.sumi-field.is-error select {
+  background: var(--sumi-danger-field);
+  border-color: var(--sumi-seal-deep);
+  color: var(--sumi-seal-deep);
 }
 
-.sumi-button:hover { background: var(--sumi-seal); border-color: var(--sumi-seal); }
-.sumi-button:active { transform: translateY(1px); }
-.sumi-button--quiet { background: var(--sumi-paper); color: var(--sumi-ink); }
-.sumi-button--destructive { background: var(--sumi-seal-deep); border-color: var(--sumi-seal-deep); }
+.sumi-field__message {
+  color: var(--sumi-seal-deep);
+  font-family: var(--sumi-typography-label-family);
+  font-size: var(--sumi-typography-label-size);
+  letter-spacing: var(--sumi-typography-label-tracking);
+}
+
+/* Dropdowns */
 
 .sumi-dropdown {
   position: relative;
@@ -139,9 +257,19 @@ textarea:focus-visible,
   text-align: left;
 }
 
-.sumi-dropdown__trigger[aria-expanded="true"] { box-shadow: 3px 3px 0 var(--sumi-seal-wash); }
-.sumi-dropdown__chevron { font-size: 12px; transition: transform var(--sumi-motion-control) var(--sumi-motion-easing); }
-.sumi-dropdown__trigger[aria-expanded="true"] .sumi-dropdown__chevron { transform: rotate(180deg); }
+.sumi-dropdown__trigger[aria-expanded="true"],
+.sumi-dropdown__trigger.is-selected {
+  border-color: var(--sumi-ink);
+  background: var(--sumi-soft-paper);
+}
+
+.sumi-dropdown__chevron {
+  font-size: 12px;
+  display: inline-block;
+  transition: transform var(--sumi-motion-control) var(--sumi-motion-easing);
+}
+.sumi-dropdown__trigger[aria-expanded="true"] .sumi-dropdown__chevron,
+.sumi-dropdown__trigger.is-selected .sumi-dropdown__chevron { transform: rotate(180deg); }
 
 .sumi-dropdown__menu {
   position: absolute;
@@ -154,7 +282,19 @@ textarea:focus-visible,
   border: 1px solid var(--sumi-ink);
   border-radius: var(--sumi-shape-radius);
   background: var(--sumi-paper);
-  box-shadow: 4px 4px 0 var(--sumi-rule);
+  opacity: 1;
+  transition: opacity var(--sumi-motion-control) var(--sumi-motion-easing);
+}
+.sumi-dropdown__menu[hidden] {
+  display: none;
+}
+
+.sumi-dropdown--static .sumi-dropdown__menu {
+  position: static;
+  z-index: auto;
+  top: auto;
+  margin-top: 4px;
+  max-width: none;
 }
 
 .sumi-dropdown__option {
@@ -169,13 +309,204 @@ textarea:focus-visible,
   color: var(--sumi-ink);
   cursor: pointer;
   text-align: start;
+  transition: background-color var(--sumi-motion-control) var(--sumi-motion-easing), color var(--sumi-motion-control) var(--sumi-motion-easing);
 }
 
-.sumi-dropdown__option:hover { background: var(--sumi-soft-paper); }
-.sumi-dropdown__option[aria-selected="true"] { background: var(--sumi-ink); color: var(--sumi-paper); }
-.sumi-dropdown__option--destructive:hover { background: var(--sumi-seal-wash); color: var(--sumi-seal-deep); }
+.sumi-dropdown__option:hover,
+.sumi-dropdown__option.is-hover { background: var(--sumi-soft-paper); }
+
+.sumi-dropdown__option[aria-selected="true"],
+.sumi-dropdown__option.is-selected {
+  background: var(--sumi-ink);
+  color: var(--sumi-paper);
+}
+
+.sumi-dropdown__option--destructive:hover,
+.sumi-dropdown__option--destructive.is-hover {
+  background: var(--sumi-seal-wash);
+  color: var(--sumi-seal-deep);
+}
+
 .sumi-dropdown__option + .sumi-dropdown__option { border-top: 1px solid var(--sumi-pale-rule); }
-.sumi-dropdown__state { margin-inline-start: auto; font-family: var(--sumi-typography-label-family); font-size: 8px; letter-spacing: .12em; }
+
+.sumi-dropdown__divider {
+  height: 1px;
+  background: var(--sumi-rule);
+}
+
+.sumi-dropdown__state {
+  margin-inline-start: auto;
+  font-family: var(--sumi-typography-label-family);
+  font-size: 8px;
+  letter-spacing: .12em;
+}
+
+/* Selection */
+
+.sumi-segmented {
+  display: flex;
+  width: min(100%, 360px);
+  border: 1px solid var(--sumi-ink);
+}
+
+.sumi-segmented__option {
+  flex: 1;
+  min-height: var(--sumi-component-sizes-touch-target);
+  border: 0;
+  border-inline-start: 1px solid var(--sumi-rule);
+  background: var(--sumi-paper);
+  color: var(--sumi-ink);
+  cursor: pointer;
+  transition: background-color var(--sumi-motion-control) var(--sumi-motion-easing), color var(--sumi-motion-control) var(--sumi-motion-easing);
+}
+
+.sumi-segmented__option:first-child { border-inline-start: 0; }
+
+.sumi-segmented__option.is-selected,
+.sumi-segmented__option[aria-selected="true"] {
+  background: var(--sumi-ink);
+  color: var(--sumi-paper);
+}
+
+.sumi-segmented__option:disabled,
+.sumi-segmented__option.is-disabled {
+  background: var(--sumi-mist);
+  color: var(--sumi-muted);
+  cursor: not-allowed;
+}
+
+.sumi-segmented--compact .sumi-segmented__option {
+  min-height: var(--sumi-component-sizes-compact-target);
+}
+
+.sumi-toggle,
+.sumi-check {
+  display: inline-flex;
+  min-height: var(--sumi-component-sizes-touch-target);
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--sumi-ink);
+  cursor: pointer;
+  text-align: start;
+}
+
+.sumi-toggle__track {
+  width: 36px;
+  height: 18px;
+  border: 1px solid var(--sumi-ink);
+  background: var(--sumi-mist);
+  transition: background-color var(--sumi-motion-control) var(--sumi-motion-easing);
+}
+
+.sumi-toggle.is-selected .sumi-toggle__track,
+.sumi-toggle[aria-pressed="true"] .sumi-toggle__track {
+  background: var(--sumi-ink);
+}
+
+.sumi-check__box {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--sumi-ink);
+  background: var(--sumi-paper);
+  transition: background-color var(--sumi-motion-control) var(--sumi-motion-easing);
+}
+
+.sumi-check.is-selected .sumi-check__box,
+.sumi-check[aria-checked="true"] .sumi-check__box {
+  background: var(--sumi-ink);
+}
+
+.sumi-toggle.is-disabled,
+.sumi-check.is-disabled,
+.sumi-toggle:disabled,
+.sumi-check:disabled {
+  color: var(--sumi-muted);
+  cursor: not-allowed;
+}
+
+.sumi-toggle.is-disabled .sumi-toggle__track,
+.sumi-check.is-disabled .sumi-check__box {
+  border-color: var(--sumi-rule);
+  background: var(--sumi-mist);
+}
+
+/* Tabs and command index */
+
+.sumi-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--sumi-ink);
+}
+
+.sumi-tabs__tab {
+  min-height: var(--sumi-component-sizes-touch-target);
+  border: 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  padding: 0 14px;
+  background: transparent;
+  color: var(--sumi-ink);
+  cursor: pointer;
+  transition: border-color var(--sumi-motion-control) var(--sumi-motion-easing), color var(--sumi-motion-control) var(--sumi-motion-easing);
+}
+
+.sumi-tabs__tab.is-selected,
+.sumi-tabs__tab[aria-selected="true"] {
+  border-bottom-color: var(--sumi-ink);
+}
+
+.sumi-tabs__tab.is-disabled,
+.sumi-tabs__tab:disabled {
+  color: var(--sumi-muted);
+  cursor: not-allowed;
+}
+
+.sumi-index {
+  display: grid;
+  width: min(100%, 280px);
+  border: 1px solid var(--sumi-rule);
+  background: var(--sumi-paper);
+}
+
+.sumi-index__item {
+  display: flex;
+  min-height: var(--sumi-component-sizes-touch-target);
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  padding: 0 12px;
+  background: transparent;
+  color: var(--sumi-ink);
+  cursor: pointer;
+  text-align: start;
+}
+
+.sumi-index__item + .sumi-index__item { border-top: 1px solid var(--sumi-pale-rule); }
+
+.sumi-index__item.is-selected,
+.sumi-index__item[aria-current="page"] {
+  background: var(--sumi-ink);
+  color: var(--sumi-paper);
+}
+
+.sumi-index-trigger {
+  display: flex;
+  width: min(100%, 280px);
+  min-height: var(--sumi-component-sizes-touch-target);
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--sumi-ink);
+  padding: 9px 11px;
+  background: var(--sumi-paper);
+  color: var(--sumi-ink);
+}
+
+.sumi-index-trigger.is-selected { background: var(--sumi-soft-paper); }
+
+/* Status */
 
 .sumi-status {
   display: inline-flex;
@@ -192,9 +523,86 @@ textarea:focus-visible,
   text-transform: uppercase;
 }
 
-.sumi-status--healthy { background: var(--sumi-okay); color: var(--sumi-paper); }
+.sumi-status--healthy { background: var(--sumi-okay); color: var(--sumi-paper); border-color: var(--sumi-okay); }
 .sumi-status--attention { border-color: var(--sumi-seal); background: var(--sumi-seal-wash); color: var(--sumi-seal-deep); }
+.sumi-status--waiting { background: var(--sumi-wash); color: var(--sumi-ink); }
+.sumi-status--blocked { background: var(--sumi-seal-deep); color: var(--sumi-paper); border-color: var(--sumi-seal-deep); }
 .sumi-status--error { border-color: var(--sumi-seal-deep); background: var(--sumi-danger-field); color: var(--sumi-seal-deep); }
+
+.sumi-toast {
+  display: grid;
+  gap: 4px;
+  width: min(100%, 320px);
+  border: 1px solid var(--sumi-ink);
+  padding: 10px 12px;
+  background: var(--sumi-paper);
+}
+
+.sumi-toast--error {
+  border-color: var(--sumi-seal-deep);
+  background: var(--sumi-danger-field);
+  color: var(--sumi-seal-deep);
+}
+
+.sumi-state-surface {
+  display: grid;
+  gap: 8px;
+  width: min(100%, 360px);
+  border: 1px solid var(--sumi-rule);
+  padding: 20px;
+  background: var(--sumi-mist);
+}
+
+.sumi-state-surface h3 {
+  margin: 0;
+  font-family: var(--sumi-typography-display-family);
+  font-size: var(--sumi-typography-title-size);
+  font-weight: 400;
+}
+
+.sumi-state-surface p {
+  margin: 0;
+  color: var(--sumi-muted);
+  line-height: var(--sumi-typography-body-line-height);
+}
+
+.sumi-state-surface--error {
+  border-color: var(--sumi-seal-deep);
+  background: var(--sumi-danger-field);
+}
+
+.sumi-state-surface--error p { color: var(--sumi-seal-deep); }
+
+/* Overlays */
+
+.sumi-dialog {
+  display: grid;
+  gap: 14px;
+  width: min(100%, 420px);
+  border: 1px solid var(--sumi-ink);
+  padding: 20px;
+  background: var(--sumi-paper);
+}
+
+.sumi-dialog__header {
+  margin: 0;
+  font-family: var(--sumi-typography-display-family);
+  font-size: var(--sumi-typography-title-size);
+  font-weight: 400;
+}
+
+.sumi-dialog__body {
+  margin: 0;
+  line-height: var(--sumi-typography-body-line-height);
+}
+
+.sumi-dialog__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Ledgers */
 
 .sumi-ledger {
   width: 100%;
@@ -203,8 +611,35 @@ textarea:focus-visible,
 }
 
 .sumi-ledger th,
-.sumi-ledger td { border-bottom: 1px solid var(--sumi-pale-rule); padding: 10px 8px; text-align: start; }
-.sumi-ledger th { background: var(--sumi-mist); color: var(--sumi-muted); font-family: var(--sumi-typography-label-family); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+.sumi-ledger td {
+  border-bottom: 1px solid var(--sumi-pale-rule);
+  padding: 10px 8px;
+  text-align: start;
+}
+
+.sumi-ledger th {
+  background: var(--sumi-mist);
+  color: var(--sumi-muted);
+  font-family: var(--sumi-typography-label-family);
+  font-size: 9px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.sumi-ledger--compact th,
+.sumi-ledger--compact td { padding: 6px 8px; }
+
+.sumi-ledger-stack {
+  display: grid;
+  gap: 8px;
+}
+
+.sumi-ledger-stack__row {
+  display: grid;
+  gap: 4px;
+  border-bottom: 1px solid var(--sumi-pale-rule);
+  padding-bottom: 8px;
+}
 
 @media (max-width: 720px) {
   .sumi-showcase { width: min(100% - 24px, 560px); padding-top: 28px; }
@@ -213,5 +648,13 @@ textarea:focus-visible,
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: var(--sumi-motion-reduced) !important; animation-duration: var(--sumi-motion-reduced) !important; }
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: var(--sumi-motion-reduced) !important;
+    animation-duration: var(--sumi-motion-reduced) !important;
+  }
+}
+
+.sumi-ledger tr.is-selected td {
+  background: var(--sumi-soft-paper);
 }

@@ -21,6 +21,7 @@ A quiet white-paper design system for products that need operational clarity, tr
 - Human-readable rules in [DESIGN.md](DESIGN.md)
 - Machine-readable values in [tokens.json](tokens.json)
 - Component inventory in [components/registry.json](components/registry.json)
+- Frozen design graph in [examples/design-graph.html](examples/design-graph.html)
 - Generated web CSS and SwiftUI token/component references
 
 ## Try it
@@ -32,8 +33,9 @@ Live showcase: [sumi-ink-design-system.vercel.app/examples/component-showcase.ht
 1. Read the contract: [DESIGN.md](DESIGN.md)
 2. Use the tokens: [tokens.json](tokens.json)
 3. Browse components: [components/](components/)
-4. Web reference: [implementations/web/](implementations/web/)
-5. SwiftUI reference: [implementations/swiftui/](implementations/swiftui/)
+4. Inspect the design graph: [examples/design-graph.html](examples/design-graph.html)
+5. Web reference: [implementations/web/](implementations/web/)
+6. SwiftUI reference: [implementations/swiftui/](implementations/swiftui/)
 
 ```bash
 npm run check

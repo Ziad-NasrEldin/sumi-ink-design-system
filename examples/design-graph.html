@@ -1,0 +1,1211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sumi-Ink v0.1.0 design graph</title>
+    <link rel="stylesheet" href="../implementations/web/tokens.css" />
+    <link rel="stylesheet" href="../implementations/web/sumi-components.css" />
+    <link rel="stylesheet" href="../implementations/web/sumi-design-graph.css" />
+  </head>
+  <body class="sumi-graph">
+    <main>
+      <header class="sumi-graph__header">
+        <p class="sumi-kicker">Sumi-Ink Command System · v0.1.0</p>
+        <h1>Design graph</h1>
+        <p>Frozen production primitives for every approved component part and visually distinct state. Agents inspect this page. Humans may review it. It is not a product screen.</p>
+        <nav class="sumi-graph__index" aria-label="Component families">
+  <a href="#family-actions">Actions</a>
+  <a href="#family-selection-and-input">Selection and input</a>
+  <a href="#family-navigation">Navigation</a>
+  <a href="#family-presentation">Presentation</a>
+  <a href="#family-status">Status</a>
+  <a href="#family-content">Content</a>
+          <a href="#family-reduced-motion">Reduced motion</a>
+          <a href="#family-interaction">Motion and interaction</a>
+        </nav>
+      </header>
+      <section class="sumi-graph-family" id="family-actions">
+    <h2 class="sumi-graph-family__title">Actions</h2>
+    <section class="sumi-graph-component" id="component-buttons">
+      <header class="sumi-graph-component__header">
+        <p class="sumi-kicker">reference</p>
+        <h2>Buttons</h2>
+      </header>
+      
+<section class="sumi-graph-row">
+  <h3>Primary</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="buttons/primary/default" data-cell-id="buttons/primary/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">buttons/primary/default</p>
+  <h4>Default</h4>
+  <p class="sumi-graph-cell__note">Ink fill, paper text, 44px target.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-button" type="button">Approve</button></div>
+</article>
+<article class="sumi-graph-cell" id="buttons/primary/hover" data-cell-id="buttons/primary/hover" dir="ltr" lang="en">
+  <p class="sumi-kicker">buttons/primary/hover</p>
+  <h4>Hover</h4>
+  <p class="sumi-graph-cell__note">Seal fill on hover.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-button is-hover" type="button">Approve</button></div>
+</article>
+<article class="sumi-graph-cell" id="buttons/primary/focus" data-cell-id="buttons/primary/focus" dir="ltr" lang="en">
+  <p class="sumi-kicker">buttons/primary/focus</p>
+  <h4>Focus</h4>
+  <p class="sumi-graph-cell__note">Visible Sumi Seal outline.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-button is-focus" type="button">Approve</button></div>
+</article>
+<article class="sumi-graph-cell" id="buttons/primary/disabled" data-cell-id="buttons/primary/disabled" dir="ltr" lang="en">
+  <p class="sumi-kicker">buttons/primary/disabled</p>
+  <h4>Disabled</h4>
+  <p class="sumi-graph-cell__note">Mist fill, muted text, written disabled.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-button is-disabled" type="button" disabled>Approve</button></div>
+</article>
+<article class="sumi-graph-cell" id="buttons/primary/loading" data-cell-id="buttons/primary/loading" dir="ltr" lang="en">
+  <p class="sumi-kicker">buttons/primary/loading</p>
+  <h4>Loading</h4>
+  <p class="sumi-graph-cell__note">Action label remains. Written loading state.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-button is-loading" type="button">Approve <span class="sumi-state">LOADING</span></button></div>
+</article>
+  </div>
+</section>
+
+<section class="sumi-graph-row">
+  <h3>Quiet</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="buttons/quiet/default" data-cell-id="buttons/quiet/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">buttons/quiet/default</p>
+  <h4>Default</h4>
+  <p class="sumi-graph-cell__note">Paper fill, ink rule.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-button sumi-button--quiet" type="button">Review later</button></div>
+</article>
+<article class="sumi-graph-cell" id="buttons/quiet/hover" data-cell-id="buttons/quiet/hover" dir="ltr" lang="en">
+  <p class="sumi-kicker">buttons/quiet/hover</p>
+  <h4>Hover</h4>
+  <p class="sumi-graph-cell__note">Soft paper hover.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-button sumi-button--quiet is-hover" type="button">Review later</button></div>
+</article>
+  </div>
+</section>
+
+<section class="sumi-graph-row">
+  <h3>Attention</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="buttons/attention/default" data-cell-id="buttons/attention/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">buttons/attention/default</p>
+  <h4>Default</h4>
+  <p class="sumi-graph-cell__note">Seal fill for attention and commitment.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-button sumi-button--attention" type="button">Commit</button></div>
+</article>
+  </div>
+</section>
+
+<section class="sumi-graph-row">
+  <h3>Destructive</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="buttons/destructive/default" data-cell-id="buttons/destructive/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">buttons/destructive/default</p>
+  <h4>Default</h4>
+  <p class="sumi-graph-cell__note">Seal deep fill with written consequence.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-button sumi-button--destructive" type="button">Delete record</button></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Compact</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="buttons/primary/compact" data-cell-id="buttons/primary/compact" dir="ltr" lang="en">
+  <p class="sumi-kicker">buttons/primary/compact</p>
+  <h4>Compact</h4>
+  <p class="sumi-graph-cell__note">34px compact command target.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-button sumi-button--compact" type="button">Approve</button></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Arabic RTL</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="buttons/primary/rtl" data-cell-id="buttons/primary/rtl" dir="rtl" lang="ar">
+  <p class="sumi-kicker">buttons/primary/rtl</p>
+  <h4>Arabic</h4>
+  <p class="sumi-graph-cell__note">Real Arabic action label.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-button" type="button">اعتماد</button></div>
+</article>
+  </div>
+</section>
+    </section>
+  </section>
+<section class="sumi-graph-family" id="family-selection-and-input">
+    <h2 class="sumi-graph-family__title">Selection and input</h2>
+    <section class="sumi-graph-component" id="component-fields">
+      <header class="sumi-graph-component__header">
+        <p class="sumi-kicker">reference</p>
+        <h2>Text fields</h2>
+      </header>
+      
+<section class="sumi-graph-row">
+  <h3>Field</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="fields/input/default" data-cell-id="fields/input/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">fields/input/default</p>
+  <h4>Default</h4>
+  <p class="sumi-graph-cell__note">Visible label, paper field, ink rule.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-field"><label for="graph-amount">Amount</label><input id="graph-amount" value="1,240.00" /></div></div>
+</article>
+<article class="sumi-graph-cell" id="fields/input/focus" data-cell-id="fields/input/focus" dir="ltr" lang="en">
+  <p class="sumi-kicker">fields/input/focus</p>
+  <h4>Focus</h4>
+  <p class="sumi-graph-cell__note">Ink border plus seal marker.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-field is-focus"><label for="graph-amount-focus">Amount</label><input id="graph-amount-focus" value="1,240.00" /></div></div>
+</article>
+<article class="sumi-graph-cell" id="fields/input/disabled" data-cell-id="fields/input/disabled" dir="ltr" lang="en">
+  <p class="sumi-kicker">fields/input/disabled</p>
+  <h4>Disabled</h4>
+  <p class="sumi-graph-cell__note">Mist background, muted text.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-field is-disabled"><label for="graph-amount-disabled">Amount</label><input id="graph-amount-disabled" value="1,240.00" disabled /></div></div>
+</article>
+<article class="sumi-graph-cell" id="fields/input/error" data-cell-id="fields/input/error" dir="ltr" lang="en">
+  <p class="sumi-kicker">fields/input/error</p>
+  <h4>Error</h4>
+  <p class="sumi-graph-cell__note">Danger field plus written correction.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-field is-error"><label for="graph-amount-error">Amount</label><input id="graph-amount-error" value="abc" /><p class="sumi-field__message">Enter a numeric amount.</p></div></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Compact</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="fields/input/compact" data-cell-id="fields/input/compact" dir="ltr" lang="en">
+  <p class="sumi-kicker">fields/input/compact</p>
+  <h4>Compact</h4>
+  <p class="sumi-graph-cell__note">Compact target on the field.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-field sumi-field--compact"><label for="graph-amount-compact">Amount</label><input id="graph-amount-compact" value="1,240.00" /></div></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Arabic RTL</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="fields/input/rtl" data-cell-id="fields/input/rtl" dir="rtl" lang="ar">
+  <p class="sumi-kicker">fields/input/rtl</p>
+  <h4>Arabic</h4>
+  <p class="sumi-graph-cell__note">Translated label, logical field order.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-field"><label for="graph-amount-rtl">المبلغ</label><input id="graph-amount-rtl" value="1,240.00" /></div></div>
+</article>
+  </div>
+</section>
+    </section>
+<section class="sumi-graph-component" id="component-dropdown-menus">
+      <header class="sumi-graph-component__header">
+        <p class="sumi-kicker">reference</p>
+        <h2>Dropdown menus</h2>
+      </header>
+      
+<section class="sumi-graph-row">
+  <h3>Trigger</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="dropdown-menus/trigger/default" data-cell-id="dropdown-menus/trigger/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">dropdown-menus/trigger/default</p>
+  <h4>Closed</h4>
+  <p class="sumi-graph-cell__note">Paper trigger, visible selected value.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-dropdown sumi-dropdown--static"><button class="sumi-dropdown__trigger" type="button" aria-expanded="false"><span>Manual income</span><span class="sumi-dropdown__chevron" aria-hidden="true">⌄</span></button></div></div>
+</article>
+<article class="sumi-graph-cell" id="dropdown-menus/trigger/expanded" data-cell-id="dropdown-menus/trigger/expanded" dir="ltr" lang="en">
+  <p class="sumi-kicker">dropdown-menus/trigger/expanded</p>
+  <h4>Expanded</h4>
+  <p class="sumi-graph-cell__note">Expanded state is written into the trigger.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-dropdown sumi-dropdown--static"><button class="sumi-dropdown__trigger is-selected" type="button" aria-expanded="true"><span>Manual income</span><span class="sumi-dropdown__chevron" aria-hidden="true">⌄</span></button></div></div>
+</article>
+  </div>
+</section>
+
+<section class="sumi-graph-row">
+  <h3>Option</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="dropdown-menus/option/default" data-cell-id="dropdown-menus/option/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">dropdown-menus/option/default</p>
+  <h4>Default</h4>
+  <p class="sumi-graph-cell__note">Plain option, 34px minimum.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-dropdown sumi-dropdown--static"><div class="sumi-dropdown__menu"><button class="sumi-dropdown__option" type="button" role="option" aria-selected="false"><span>Cash transfer</span><span class="sumi-dropdown__state"></span></button></div></div></div>
+</article>
+<article class="sumi-graph-cell" id="dropdown-menus/option/hover" data-cell-id="dropdown-menus/option/hover" dir="ltr" lang="en">
+  <p class="sumi-kicker">dropdown-menus/option/hover</p>
+  <h4>Hover</h4>
+  <p class="sumi-graph-cell__note">Soft paper hover.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-dropdown sumi-dropdown--static"><div class="sumi-dropdown__menu"><button class="sumi-dropdown__option is-hover" type="button" role="option" aria-selected="false"><span>Cash transfer</span><span class="sumi-dropdown__state"></span></button></div></div></div>
+</article>
+<article class="sumi-graph-cell" id="dropdown-menus/option/selected" data-cell-id="dropdown-menus/option/selected" dir="ltr" lang="en">
+  <p class="sumi-kicker">dropdown-menus/option/selected</p>
+  <h4>Selected</h4>
+  <p class="sumi-graph-cell__note">Ink inversion plus written SELECTED.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-dropdown sumi-dropdown--static"><div class="sumi-dropdown__menu"><button class="sumi-dropdown__option is-selected" type="button" role="option" aria-selected="true"><span>Manual income</span><span class="sumi-dropdown__state">SELECTED</span></button></div></div></div>
+</article>
+<article class="sumi-graph-cell" id="dropdown-menus/option/destructive-hover" data-cell-id="dropdown-menus/option/destructive-hover" dir="ltr" lang="en">
+  <p class="sumi-kicker">dropdown-menus/option/destructive-hover</p>
+  <h4>Destructive hover</h4>
+  <p class="sumi-graph-cell__note">Seal wash hover, seal deep text.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-dropdown sumi-dropdown--static"><div class="sumi-dropdown__menu"><button class="sumi-dropdown__option sumi-dropdown__option--destructive is-hover" type="button" role="option" aria-selected="false"><span>Adjustment</span><span class="sumi-dropdown__state"></span></button></div></div></div>
+</article>
+  </div>
+</section>
+
+<section class="sumi-graph-row">
+  <h3>Group divider</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="dropdown-menus/divider/default" data-cell-id="dropdown-menus/divider/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">dropdown-menus/divider/default</p>
+  <h4>Divider</h4>
+  <p class="sumi-graph-cell__note">One-pixel Sumi Rule between grouped options.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-dropdown sumi-dropdown--static"><div class="sumi-dropdown__menu"><button class="sumi-dropdown__option" type="button"><span>Manual income</span></button><div class="sumi-dropdown__divider"></div><button class="sumi-dropdown__option" type="button"><span>Adjustment</span></button></div></div></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Compact</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="dropdown-menus/trigger/compact" data-cell-id="dropdown-menus/trigger/compact" dir="ltr" lang="en">
+  <p class="sumi-kicker">dropdown-menus/trigger/compact</p>
+  <h4>Compact trigger</h4>
+  <p class="sumi-graph-cell__note">Compact trigger height.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-dropdown sumi-dropdown--static"><button class="sumi-dropdown__trigger" type="button" style="min-height:var(--sumi-component-sizes-compact-target)"><span>Manual income</span><span class="sumi-dropdown__chevron" aria-hidden="true">⌄</span></button></div></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Arabic RTL</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="dropdown-menus/option/rtl" data-cell-id="dropdown-menus/option/rtl" dir="rtl" lang="ar">
+  <p class="sumi-kicker">dropdown-menus/option/rtl</p>
+  <h4>Arabic selected</h4>
+  <p class="sumi-graph-cell__note">Translated selected stamp.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-dropdown sumi-dropdown--static"><div class="sumi-dropdown__menu"><button class="sumi-dropdown__option is-selected" type="button" role="option" aria-selected="true"><span>دخل يدوي</span><span class="sumi-dropdown__state">محدد</span></button></div></div></div>
+</article>
+  </div>
+</section>
+    </section>
+<section class="sumi-graph-component" id="component-segmented-controls">
+      <header class="sumi-graph-component__header">
+        <p class="sumi-kicker">reference</p>
+        <h2>Segmented controls</h2>
+      </header>
+      
+<section class="sumi-graph-row">
+  <h3>Segment</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="segmented-controls/option/default" data-cell-id="segmented-controls/option/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">segmented-controls/option/default</p>
+  <h4>Unselected</h4>
+  <p class="sumi-graph-cell__note">Square segments, ink rule.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-segmented"><button class="sumi-segmented__option" type="button">List</button><button class="sumi-segmented__option" type="button">Board</button></div></div>
+</article>
+<article class="sumi-graph-cell" id="segmented-controls/option/selected" data-cell-id="segmented-controls/option/selected" dir="ltr" lang="en">
+  <p class="sumi-kicker">segmented-controls/option/selected</p>
+  <h4>Selected</h4>
+  <p class="sumi-graph-cell__note">Ink fill, paper text.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-segmented"><button class="sumi-segmented__option is-selected" type="button" aria-selected="true">List</button><button class="sumi-segmented__option" type="button">Board</button></div></div>
+</article>
+<article class="sumi-graph-cell" id="segmented-controls/option/disabled" data-cell-id="segmented-controls/option/disabled" dir="ltr" lang="en">
+  <p class="sumi-kicker">segmented-controls/option/disabled</p>
+  <h4>Disabled</h4>
+  <p class="sumi-graph-cell__note">Mist disabled segment.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-segmented"><button class="sumi-segmented__option is-disabled" type="button" disabled>List</button><button class="sumi-segmented__option" type="button">Board</button></div></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Compact</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="segmented-controls/option/compact" data-cell-id="segmented-controls/option/compact" dir="ltr" lang="en">
+  <p class="sumi-kicker">segmented-controls/option/compact</p>
+  <h4>Compact</h4>
+  <p class="sumi-graph-cell__note">34px compact segments.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-segmented sumi-segmented--compact"><button class="sumi-segmented__option is-selected" type="button">List</button><button class="sumi-segmented__option" type="button">Board</button></div></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Arabic RTL</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="segmented-controls/option/rtl" data-cell-id="segmented-controls/option/rtl" dir="rtl" lang="ar">
+  <p class="sumi-kicker">segmented-controls/option/rtl</p>
+  <h4>Arabic</h4>
+  <p class="sumi-graph-cell__note">Translated mutually exclusive modes.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-segmented"><button class="sumi-segmented__option is-selected" type="button">قائمة</button><button class="sumi-segmented__option" type="button">لوحة</button></div></div>
+</article>
+  </div>
+</section>
+    </section>
+<section class="sumi-graph-component" id="component-toggles">
+      <header class="sumi-graph-component__header">
+        <p class="sumi-kicker">reference</p>
+        <h2>Toggles and checks</h2>
+      </header>
+      
+<section class="sumi-graph-row">
+  <h3>Toggle</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="toggles/toggle/off" data-cell-id="toggles/toggle/off" dir="ltr" lang="en">
+  <p class="sumi-kicker">toggles/toggle/off</p>
+  <h4>Off</h4>
+  <p class="sumi-graph-cell__note">Written off state.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-toggle" type="button" aria-pressed="false"><span class="sumi-toggle__track" aria-hidden="true"></span><span>Auto post</span></button></div>
+</article>
+<article class="sumi-graph-cell" id="toggles/toggle/on" data-cell-id="toggles/toggle/on" dir="ltr" lang="en">
+  <p class="sumi-kicker">toggles/toggle/on</p>
+  <h4>On</h4>
+  <p class="sumi-graph-cell__note">Immediate on setting.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-toggle is-selected" type="button" aria-pressed="true"><span class="sumi-toggle__track" aria-hidden="true"></span><span>Auto post</span></button></div>
+</article>
+<article class="sumi-graph-cell" id="toggles/toggle/disabled" data-cell-id="toggles/toggle/disabled" dir="ltr" lang="en">
+  <p class="sumi-kicker">toggles/toggle/disabled</p>
+  <h4>Disabled</h4>
+  <p class="sumi-graph-cell__note">Muted disabled setting.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-toggle is-disabled" type="button" disabled><span class="sumi-toggle__track" aria-hidden="true"></span><span>Auto post</span></button></div>
+</article>
+  </div>
+</section>
+
+<section class="sumi-graph-row">
+  <h3>Check</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="toggles/check/off" data-cell-id="toggles/check/off" dir="ltr" lang="en">
+  <p class="sumi-kicker">toggles/check/off</p>
+  <h4>Unchecked</h4>
+  <p class="sumi-graph-cell__note">Independent choice.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-check" type="button" aria-checked="false"><span class="sumi-check__box" aria-hidden="true"></span><span>Include closed</span></button></div>
+</article>
+<article class="sumi-graph-cell" id="toggles/check/on" data-cell-id="toggles/check/on" dir="ltr" lang="en">
+  <p class="sumi-kicker">toggles/check/on</p>
+  <h4>Checked</h4>
+  <p class="sumi-graph-cell__note">Ink checked box.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-check is-selected" type="button" aria-checked="true"><span class="sumi-check__box" aria-hidden="true"></span><span>Include closed</span></button></div>
+</article>
+<article class="sumi-graph-cell" id="toggles/check/disabled" data-cell-id="toggles/check/disabled" dir="ltr" lang="en">
+  <p class="sumi-kicker">toggles/check/disabled</p>
+  <h4>Disabled</h4>
+  <p class="sumi-graph-cell__note">Disabled independent choice.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-check is-disabled" type="button" disabled><span class="sumi-check__box" aria-hidden="true"></span><span>Include closed</span></button></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Compact</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="toggles/toggle/compact" data-cell-id="toggles/toggle/compact" dir="ltr" lang="en">
+  <p class="sumi-kicker">toggles/toggle/compact</p>
+  <h4>Compact</h4>
+  <p class="sumi-graph-cell__note">Compact toggle row.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-toggle" type="button" aria-pressed="true" style="min-height:var(--sumi-component-sizes-compact-target)"><span class="sumi-toggle__track" aria-hidden="true"></span><span>Auto post</span></button></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Arabic RTL</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="toggles/toggle/rtl" data-cell-id="toggles/toggle/rtl" dir="rtl" lang="ar">
+  <p class="sumi-kicker">toggles/toggle/rtl</p>
+  <h4>Arabic</h4>
+  <p class="sumi-graph-cell__note">Translated toggle label.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-toggle is-selected" type="button" aria-pressed="true"><span class="sumi-toggle__track" aria-hidden="true"></span><span>نشر تلقائي</span></button></div>
+</article>
+  </div>
+</section>
+    </section>
+<section class="sumi-graph-component" id="component-date-time">
+      <header class="sumi-graph-component__header">
+        <p class="sumi-kicker">reference</p>
+        <h2>Date and time</h2>
+      </header>
+      
+<section class="sumi-graph-row">
+  <h3>Date field</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="date-time/field/default" data-cell-id="date-time/field/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">date-time/field/default</p>
+  <h4>Default</h4>
+  <p class="sumi-graph-cell__note">Visible label and understandable format.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-field"><label for="graph-date">Posted on</label><input id="graph-date" value="2026-08-22" /></div></div>
+</article>
+<article class="sumi-graph-cell" id="date-time/field/focus" data-cell-id="date-time/field/focus" dir="ltr" lang="en">
+  <p class="sumi-kicker">date-time/field/focus</p>
+  <h4>Focus</h4>
+  <p class="sumi-graph-cell__note">Seal marker on the date field.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-field is-focus"><label for="graph-date-focus">Posted on</label><input id="graph-date-focus" value="2026-08-22" /></div></div>
+</article>
+<article class="sumi-graph-cell" id="date-time/field/error" data-cell-id="date-time/field/error" dir="ltr" lang="en">
+  <p class="sumi-kicker">date-time/field/error</p>
+  <h4>Invalid range</h4>
+  <p class="sumi-graph-cell__note">Written invalid range.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-field is-error"><label for="graph-date-error">Posted on</label><input id="graph-date-error" value="32/13/2026" /><p class="sumi-field__message">Use YYYY-MM-DD.</p></div></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Compact</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="date-time/field/compact" data-cell-id="date-time/field/compact" dir="ltr" lang="en">
+  <p class="sumi-kicker">date-time/field/compact</p>
+  <h4>Compact</h4>
+  <p class="sumi-graph-cell__note">Compact date field.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-field sumi-field--compact"><label for="graph-date-compact">Posted on</label><input id="graph-date-compact" value="2026-08-22" /></div></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Arabic RTL</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="date-time/field/rtl" data-cell-id="date-time/field/rtl" dir="rtl" lang="ar">
+  <p class="sumi-kicker">date-time/field/rtl</p>
+  <h4>Arabic</h4>
+  <p class="sumi-graph-cell__note">Localized date label.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-field"><label for="graph-date-rtl">تاريخ القيد</label><input id="graph-date-rtl" value="2026-08-22" /></div></div>
+</article>
+  </div>
+</section>
+    </section>
+  </section>
+<section class="sumi-graph-family" id="family-navigation">
+    <h2 class="sumi-graph-family__title">Navigation</h2>
+    <section class="sumi-graph-component" id="component-app-shell">
+      <header class="sumi-graph-component__header">
+        <p class="sumi-kicker">reference</p>
+        <h2>App shell</h2>
+      </header>
+      
+<section class="sumi-graph-row">
+  <h3>Current destination</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="app-shell/destination/default" data-cell-id="app-shell/destination/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">app-shell/destination/default</p>
+  <h4>Idle destination</h4>
+  <p class="sumi-graph-cell__note">Destination label in the shell.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-index__item" type="button">Ledger</button></div>
+</article>
+<article class="sumi-graph-cell" id="app-shell/destination/selected" data-cell-id="app-shell/destination/selected" dir="ltr" lang="en">
+  <p class="sumi-kicker">app-shell/destination/selected</p>
+  <h4>Current destination</h4>
+  <p class="sumi-graph-cell__note">Written selected destination.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-index__item is-selected" type="button" aria-current="page">Ledger <span class="sumi-state">CURRENT</span></button></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Compact</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="app-shell/destination/compact" data-cell-id="app-shell/destination/compact" dir="ltr" lang="en">
+  <p class="sumi-kicker">app-shell/destination/compact</p>
+  <h4>Compact destination</h4>
+  <p class="sumi-graph-cell__note">Compact destination row.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-index__item is-selected" type="button" style="min-height:var(--sumi-component-sizes-compact-target)">Ledger <span class="sumi-state">CURRENT</span></button></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Arabic RTL</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="app-shell/destination/rtl" data-cell-id="app-shell/destination/rtl" dir="rtl" lang="ar">
+  <p class="sumi-kicker">app-shell/destination/rtl</p>
+  <h4>Arabic destination</h4>
+  <p class="sumi-graph-cell__note">Translated current destination.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-index__item is-selected" type="button" aria-current="page">دفتر <span class="sumi-state">الحالي</span></button></div>
+</article>
+  </div>
+</section>
+    </section>
+<section class="sumi-graph-component" id="component-command-index">
+      <header class="sumi-graph-component__header">
+        <p class="sumi-kicker">reference</p>
+        <h2>Command index</h2>
+      </header>
+      
+<section class="sumi-graph-row">
+  <h3>Index item</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="command-index/item/default" data-cell-id="command-index/item/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">command-index/item/default</p>
+  <h4>Default</h4>
+  <p class="sumi-graph-cell__note">Primary routes stay discoverable.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-index"><button class="sumi-index__item" type="button">Inbox</button><button class="sumi-index__item" type="button">Ledger</button></div></div>
+</article>
+<article class="sumi-graph-cell" id="command-index/item/selected" data-cell-id="command-index/item/selected" dir="ltr" lang="en">
+  <p class="sumi-kicker">command-index/item/selected</p>
+  <h4>Selected</h4>
+  <p class="sumi-graph-cell__note">Ink inversion for the current route.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-index"><button class="sumi-index__item is-selected" type="button" aria-current="page">Inbox</button><button class="sumi-index__item" type="button">Ledger</button></div></div>
+</article>
+  </div>
+</section>
+
+<section class="sumi-graph-row">
+  <h3>Collapsed trigger</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="command-index/trigger/collapsed" data-cell-id="command-index/trigger/collapsed" dir="ltr" lang="en">
+  <p class="sumi-kicker">command-index/trigger/collapsed</p>
+  <h4>Collapsed</h4>
+  <p class="sumi-graph-cell__note">Written menu trigger, not an icon-only control.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-index-trigger" type="button" aria-expanded="false"><span>Command index</span><span aria-hidden="true">⌄</span></button></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Compact</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="command-index/trigger/compact" data-cell-id="command-index/trigger/compact" dir="ltr" lang="en">
+  <p class="sumi-kicker">command-index/trigger/compact</p>
+  <h4>Compact trigger</h4>
+  <p class="sumi-graph-cell__note">Compact index trigger.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-index-trigger" type="button" style="min-height:var(--sumi-component-sizes-compact-target)"><span>Command index</span><span aria-hidden="true">⌄</span></button></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Arabic RTL</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="command-index/item/rtl" data-cell-id="command-index/item/rtl" dir="rtl" lang="ar">
+  <p class="sumi-kicker">command-index/item/rtl</p>
+  <h4>Arabic item</h4>
+  <p class="sumi-graph-cell__note">Translated command index.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-index"><button class="sumi-index__item is-selected" type="button">وارد</button><button class="sumi-index__item" type="button">دفتر</button></div></div>
+</article>
+  </div>
+</section>
+    </section>
+<section class="sumi-graph-component" id="component-tabs">
+      <header class="sumi-graph-component__header">
+        <p class="sumi-kicker">reference</p>
+        <h2>Tabs</h2>
+      </header>
+      
+<section class="sumi-graph-row">
+  <h3>Tab</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="tabs/tab/inactive" data-cell-id="tabs/tab/inactive" dir="ltr" lang="en">
+  <p class="sumi-kicker">tabs/tab/inactive</p>
+  <h4>Inactive</h4>
+  <p class="sumi-graph-cell__note">Related views, same task.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-tabs"><button class="sumi-tabs__tab" type="button">Open</button><button class="sumi-tabs__tab" type="button">Closed</button></div></div>
+</article>
+<article class="sumi-graph-cell" id="tabs/tab/active" data-cell-id="tabs/tab/active" dir="ltr" lang="en">
+  <p class="sumi-kicker">tabs/tab/active</p>
+  <h4>Active</h4>
+  <p class="sumi-graph-cell__note">Ink underline plus selected state.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-tabs"><button class="sumi-tabs__tab is-selected" type="button" aria-selected="true">Open</button><button class="sumi-tabs__tab" type="button">Closed</button></div></div>
+</article>
+<article class="sumi-graph-cell" id="tabs/tab/focus" data-cell-id="tabs/tab/focus" dir="ltr" lang="en">
+  <p class="sumi-kicker">tabs/tab/focus</p>
+  <h4>Focus</h4>
+  <p class="sumi-graph-cell__note">Keyboard-visible focus.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-tabs"><button class="sumi-tabs__tab is-selected is-focus" type="button" aria-selected="true">Open</button><button class="sumi-tabs__tab" type="button">Closed</button></div></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Compact</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="tabs/tab/compact" data-cell-id="tabs/tab/compact" dir="ltr" lang="en">
+  <p class="sumi-kicker">tabs/tab/compact</p>
+  <h4>Compact</h4>
+  <p class="sumi-graph-cell__note">Compact tab targets.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-tabs"><button class="sumi-tabs__tab is-selected" type="button" style="min-height:var(--sumi-component-sizes-compact-target)">Open</button><button class="sumi-tabs__tab" type="button" style="min-height:var(--sumi-component-sizes-compact-target)">Closed</button></div></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Arabic RTL</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="tabs/tab/rtl" data-cell-id="tabs/tab/rtl" dir="rtl" lang="ar">
+  <p class="sumi-kicker">tabs/tab/rtl</p>
+  <h4>Arabic</h4>
+  <p class="sumi-graph-cell__note">Translated tab labels.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-tabs"><button class="sumi-tabs__tab is-selected" type="button">مفتوح</button><button class="sumi-tabs__tab" type="button">مغلق</button></div></div>
+</article>
+  </div>
+</section>
+    </section>
+  </section>
+<section class="sumi-graph-family" id="family-presentation">
+    <h2 class="sumi-graph-family__title">Presentation</h2>
+    <section class="sumi-graph-component" id="component-overlays">
+      <header class="sumi-graph-component__header">
+        <p class="sumi-kicker">reference</p>
+        <h2>Dialogs, sheets, and popovers</h2>
+      </header>
+      
+<section class="sumi-graph-row">
+  <h3>Dialog</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="overlays/dialog/header" data-cell-id="overlays/dialog/header" dir="ltr" lang="en">
+  <p class="sumi-kicker">overlays/dialog/header</p>
+  <h4>Header</h4>
+  <p class="sumi-graph-cell__note">Focused decision title.</p>
+  <div class="sumi-graph-cell__stage"><section class="sumi-dialog"><h3 class="sumi-dialog__header">Delete record</h3></section></div>
+</article>
+<article class="sumi-graph-cell" id="overlays/dialog/body" data-cell-id="overlays/dialog/body" dir="ltr" lang="en">
+  <p class="sumi-kicker">overlays/dialog/body</p>
+  <h4>Body</h4>
+  <p class="sumi-graph-cell__note">Object and consequence in writing.</p>
+  <div class="sumi-graph-cell__stage"><section class="sumi-dialog"><p class="sumi-dialog__body">This removes Nile Air Store from the ledger. The action cannot be undone.</p></section></div>
+</article>
+<article class="sumi-graph-cell" id="overlays/dialog/confirm" data-cell-id="overlays/dialog/confirm" dir="ltr" lang="en">
+  <p class="sumi-kicker">overlays/dialog/confirm</p>
+  <h4>Confirm</h4>
+  <p class="sumi-graph-cell__note">Primary confirmation action.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-button sumi-button--destructive" type="button">Delete record</button></div>
+</article>
+<article class="sumi-graph-cell" id="overlays/dialog/cancel" data-cell-id="overlays/dialog/cancel" dir="ltr" lang="en">
+  <p class="sumi-kicker">overlays/dialog/cancel</p>
+  <h4>Cancel</h4>
+  <p class="sumi-graph-cell__note">Cancellation path does not mutate.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-button sumi-button--quiet" type="button">Keep record</button></div>
+</article>
+<article class="sumi-graph-cell" id="overlays/dialog/destructive" data-cell-id="overlays/dialog/destructive" dir="ltr" lang="en">
+  <p class="sumi-kicker">overlays/dialog/destructive</p>
+  <h4>Destructive confirmation</h4>
+  <p class="sumi-graph-cell__note">Header, consequence, cancel, confirm.</p>
+  <div class="sumi-graph-cell__stage"><section class="sumi-dialog"><h3 class="sumi-dialog__header">Delete record</h3><p class="sumi-dialog__body">This removes Nile Air Store from the ledger. The action cannot be undone.</p><div class="sumi-dialog__actions"><button class="sumi-button sumi-button--quiet" type="button">Keep record</button><button class="sumi-button sumi-button--destructive" type="button">Delete record</button></div></section></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Compact</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="overlays/dialog/compact" data-cell-id="overlays/dialog/compact" dir="ltr" lang="en">
+  <p class="sumi-kicker">overlays/dialog/compact</p>
+  <h4>Compact actions</h4>
+  <p class="sumi-graph-cell__note">Compact overlay actions.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-dialog__actions"><button class="sumi-button sumi-button--quiet sumi-button--compact" type="button">Keep record</button><button class="sumi-button sumi-button--destructive sumi-button--compact" type="button">Delete record</button></div></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Arabic RTL</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="overlays/dialog/rtl" data-cell-id="overlays/dialog/rtl" dir="rtl" lang="ar">
+  <p class="sumi-kicker">overlays/dialog/rtl</p>
+  <h4>Arabic dialog</h4>
+  <p class="sumi-graph-cell__note">Translated consequence and actions.</p>
+  <div class="sumi-graph-cell__stage"><section class="sumi-dialog"><h3 class="sumi-dialog__header">حذف السجل</h3><p class="sumi-dialog__body">سيُحذف Nile Air Store من الدفتر. لا يمكن التراجع.</p><div class="sumi-dialog__actions"><button class="sumi-button sumi-button--quiet" type="button">إبقاء السجل</button><button class="sumi-button sumi-button--destructive" type="button">حذف السجل</button></div></section></div>
+</article>
+  </div>
+</section>
+    </section>
+<section class="sumi-graph-component" id="component-cards">
+      <header class="sumi-graph-component__header">
+        <p class="sumi-kicker">reference</p>
+        <h2>Paper sheets and slips</h2>
+      </header>
+      
+<section class="sumi-graph-row">
+  <h3>Sheet</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="cards/sheet/default" data-cell-id="cards/sheet/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">cards/sheet/default</p>
+  <h4>Sheet</h4>
+  <p class="sumi-graph-cell__note">Paper surface, one-pixel rule, ink cap.</p>
+  <div class="sumi-graph-cell__stage"><article class="sumi-sheet"><p class="sumi-kicker">Evidence</p><h2 style="font-size:18px;margin:0 0 8px">Nile Air Store</h2><p style="margin:0">Approved bank debit, EGP 1,240.00.</p></article></div>
+</article>
+  </div>
+</section>
+
+<section class="sumi-graph-row">
+  <h3>Slip</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="cards/slip/default" data-cell-id="cards/slip/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">cards/slip/default</p>
+  <h4>Slip</h4>
+  <p class="sumi-graph-cell__note">Compact evidence plus one action.</p>
+  <div class="sumi-graph-cell__stage"><article class="sumi-slip"><p class="sumi-kicker">Summary</p><h3 class="sumi-slip__title">Waiting review</h3><p style="margin:0 0 12px">Manual entry, EGP 320.00.</p><button class="sumi-button sumi-button--quiet sumi-button--compact" type="button">Open</button></article></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Compact</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="cards/slip/compact" data-cell-id="cards/slip/compact" dir="ltr" lang="en">
+  <p class="sumi-kicker">cards/slip/compact</p>
+  <h4>Compact slip</h4>
+  <p class="sumi-graph-cell__note">Compact slip action.</p>
+  <div class="sumi-graph-cell__stage"><article class="sumi-slip"><p class="sumi-kicker">Summary</p><h3 class="sumi-slip__title">Waiting review</h3><button class="sumi-button sumi-button--compact" type="button">Open</button></article></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Arabic RTL</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="cards/slip/rtl" data-cell-id="cards/slip/rtl" dir="rtl" lang="ar">
+  <p class="sumi-kicker">cards/slip/rtl</p>
+  <h4>Arabic slip</h4>
+  <p class="sumi-graph-cell__note">Translated slip.</p>
+  <div class="sumi-graph-cell__stage"><article class="sumi-slip"><p class="sumi-kicker">ملخص</p><h3 class="sumi-slip__title">بانتظار المراجعة</h3><p style="margin:0 0 12px">قيد يدوي، 320.00 جنيه.</p><button class="sumi-button sumi-button--quiet sumi-button--compact" type="button">فتح</button></article></div>
+</article>
+  </div>
+</section>
+    </section>
+  </section>
+<section class="sumi-graph-family" id="family-status">
+    <h2 class="sumi-graph-family__title">Status</h2>
+    <section class="sumi-graph-component" id="component-status-stamps">
+      <header class="sumi-graph-component__header">
+        <p class="sumi-kicker">reference</p>
+        <h2>Status stamps</h2>
+      </header>
+      
+<section class="sumi-graph-row">
+  <h3>Stamp</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="status-stamps/stamp/healthy" data-cell-id="status-stamps/stamp/healthy" dir="ltr" lang="en">
+  <p class="sumi-kicker">status-stamps/stamp/healthy</p>
+  <h4>Healthy</h4>
+  <p class="sumi-graph-cell__note">Written healthy label.</p>
+  <div class="sumi-graph-cell__stage"><span class="sumi-status sumi-status--healthy">Healthy</span></div>
+</article>
+<article class="sumi-graph-cell" id="status-stamps/stamp/attention" data-cell-id="status-stamps/stamp/attention" dir="ltr" lang="en">
+  <p class="sumi-kicker">status-stamps/stamp/attention</p>
+  <h4>Attention</h4>
+  <p class="sumi-graph-cell__note">Seal wash plus written attention.</p>
+  <div class="sumi-graph-cell__stage"><span class="sumi-status sumi-status--attention">Needs review</span></div>
+</article>
+<article class="sumi-graph-cell" id="status-stamps/stamp/waiting" data-cell-id="status-stamps/stamp/waiting" dir="ltr" lang="en">
+  <p class="sumi-kicker">status-stamps/stamp/waiting</p>
+  <h4>Waiting</h4>
+  <p class="sumi-graph-cell__note">Written waiting, not color-only.</p>
+  <div class="sumi-graph-cell__stage"><span class="sumi-status sumi-status--waiting">Waiting</span></div>
+</article>
+<article class="sumi-graph-cell" id="status-stamps/stamp/error" data-cell-id="status-stamps/stamp/error" dir="ltr" lang="en">
+  <p class="sumi-kicker">status-stamps/stamp/error</p>
+  <h4>Error</h4>
+  <p class="sumi-graph-cell__note">Written unavailable or error.</p>
+  <div class="sumi-graph-cell__stage"><span class="sumi-status sumi-status--error">Unavailable</span></div>
+</article>
+<article class="sumi-graph-cell" id="status-stamps/stamp/blocked" data-cell-id="status-stamps/stamp/blocked" dir="ltr" lang="en">
+  <p class="sumi-kicker">status-stamps/stamp/blocked</p>
+  <h4>Blocked</h4>
+  <p class="sumi-graph-cell__note">Seal deep blocked state.</p>
+  <div class="sumi-graph-cell__stage"><span class="sumi-status sumi-status--blocked">Blocked</span></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Compact</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="status-stamps/stamp/compact" data-cell-id="status-stamps/stamp/compact" dir="ltr" lang="en">
+  <p class="sumi-kicker">status-stamps/stamp/compact</p>
+  <h4>Compact pair</h4>
+  <p class="sumi-graph-cell__note">Dense stamp cluster.</p>
+  <div class="sumi-graph-cell__stage"><span class="sumi-status sumi-status--healthy">Approved</span> <span class="sumi-status sumi-status--waiting">Waiting</span></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Arabic RTL</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="status-stamps/stamp/rtl" data-cell-id="status-stamps/stamp/rtl" dir="rtl" lang="ar">
+  <p class="sumi-kicker">status-stamps/stamp/rtl</p>
+  <h4>Arabic</h4>
+  <p class="sumi-graph-cell__note">Translated stamps.</p>
+  <div class="sumi-graph-cell__stage"><span class="sumi-status sumi-status--healthy">سليم</span> <span class="sumi-status sumi-status--attention">يحتاج مراجعة</span></div>
+</article>
+  </div>
+</section>
+    </section>
+<section class="sumi-graph-component" id="component-toast-feedback">
+      <header class="sumi-graph-component__header">
+        <p class="sumi-kicker">reference</p>
+        <h2>Toast and inline feedback</h2>
+      </header>
+      
+<section class="sumi-graph-row">
+  <h3>Toast</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="toast-feedback/toast/default" data-cell-id="toast-feedback/toast/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">toast-feedback/toast/default</p>
+  <h4>Short-lived</h4>
+  <p class="sumi-graph-cell__note">Short-lived feedback, no decision required.</p>
+  <div class="sumi-graph-cell__stage"><aside class="sumi-toast"><p class="sumi-kicker">Saved</p><p style="margin:0">Ledger row updated.</p></aside></div>
+</article>
+<article class="sumi-graph-cell" id="toast-feedback/toast/error" data-cell-id="toast-feedback/toast/error" dir="ltr" lang="en">
+  <p class="sumi-kicker">toast-feedback/toast/error</p>
+  <h4>Failure</h4>
+  <p class="sumi-graph-cell__note">Failure copy remains readable.</p>
+  <div class="sumi-graph-cell__stage"><aside class="sumi-toast sumi-toast--error"><p class="sumi-kicker">Failed</p><p style="margin:0">Save did not complete. Retry the write.</p></aside></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Compact</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="toast-feedback/toast/compact" data-cell-id="toast-feedback/toast/compact" dir="ltr" lang="en">
+  <p class="sumi-kicker">toast-feedback/toast/compact</p>
+  <h4>Compact toast</h4>
+  <p class="sumi-graph-cell__note">Compact written feedback.</p>
+  <div class="sumi-graph-cell__stage"><aside class="sumi-toast"><p class="sumi-kicker">Saved</p><p style="margin:0">Row updated.</p></aside></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Arabic RTL</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="toast-feedback/toast/rtl" data-cell-id="toast-feedback/toast/rtl" dir="rtl" lang="ar">
+  <p class="sumi-kicker">toast-feedback/toast/rtl</p>
+  <h4>Arabic toast</h4>
+  <p class="sumi-graph-cell__note">Translated failure copy.</p>
+  <div class="sumi-graph-cell__stage"><aside class="sumi-toast sumi-toast--error"><p class="sumi-kicker">فشل</p><p style="margin:0">لم يكتمل الحفظ. أعد المحاولة.</p></aside></div>
+</article>
+  </div>
+</section>
+    </section>
+<section class="sumi-graph-component" id="component-empty-loading-error">
+      <header class="sumi-graph-component__header">
+        <p class="sumi-kicker">reference</p>
+        <h2>Empty, loading, and error</h2>
+      </header>
+      
+<section class="sumi-graph-row">
+  <h3>State surface</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="empty-loading-error/empty/default" data-cell-id="empty-loading-error/empty/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">empty-loading-error/empty/default</p>
+  <h4>Empty</h4>
+  <p class="sumi-graph-cell__note">Explains absence and next action.</p>
+  <div class="sumi-graph-cell__stage"><section class="sumi-state-surface"><p class="sumi-kicker">Empty</p><h3>No approved activity</h3><p>Nothing is missing from the source. Create a ledger row when work exists.</p></section></div>
+</article>
+<article class="sumi-graph-cell" id="empty-loading-error/loading/default" data-cell-id="empty-loading-error/loading/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">empty-loading-error/loading/default</p>
+  <h4>Loading</h4>
+  <p class="sumi-graph-cell__note">Explains what is being checked.</p>
+  <div class="sumi-graph-cell__stage"><section class="sumi-state-surface"><p class="sumi-kicker">Loading</p><h3>Checking ledger source</h3><p>Waiting for the source to confirm current rows.</p></section></div>
+</article>
+<article class="sumi-graph-cell" id="empty-loading-error/error/default" data-cell-id="empty-loading-error/error/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">empty-loading-error/error/default</p>
+  <h4>Error</h4>
+  <p class="sumi-graph-cell__note">Names the failed operation and recovery.</p>
+  <div class="sumi-graph-cell__stage"><section class="sumi-state-surface sumi-state-surface--error"><p class="sumi-kicker">Error</p><h3>Ledger source unavailable</h3><p>The source did not confirm. Retry the load.</p><button class="sumi-button sumi-button--quiet sumi-button--compact" type="button">Retry</button></section></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Compact</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="empty-loading-error/loading/compact" data-cell-id="empty-loading-error/loading/compact" dir="ltr" lang="en">
+  <p class="sumi-kicker">empty-loading-error/loading/compact</p>
+  <h4>Compact loading</h4>
+  <p class="sumi-graph-cell__note">Compact written loading.</p>
+  <div class="sumi-graph-cell__stage"><section class="sumi-state-surface"><p class="sumi-kicker">Loading</p><h3>Checking source</h3></section></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Arabic RTL</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="empty-loading-error/error/rtl" data-cell-id="empty-loading-error/error/rtl" dir="rtl" lang="ar">
+  <p class="sumi-kicker">empty-loading-error/error/rtl</p>
+  <h4>Arabic error</h4>
+  <p class="sumi-graph-cell__note">Translated recovery.</p>
+  <div class="sumi-graph-cell__stage"><section class="sumi-state-surface sumi-state-surface--error"><p class="sumi-kicker">خطأ</p><h3>المصدر غير متاح</h3><p>لم يؤكد المصدر. أعد التحميل.</p><button class="sumi-button sumi-button--quiet sumi-button--compact" type="button">إعادة المحاولة</button></section></div>
+</article>
+  </div>
+</section>
+    </section>
+  </section>
+<section class="sumi-graph-family" id="family-content">
+    <h2 class="sumi-graph-family__title">Content</h2>
+    <section class="sumi-graph-component" id="component-ledgers">
+      <header class="sumi-graph-component__header">
+        <p class="sumi-kicker">reference</p>
+        <h2>Ledgers</h2>
+      </header>
+      
+<section class="sumi-graph-row">
+  <h3>Header</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="ledgers/header/default" data-cell-id="ledgers/header/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">ledgers/header/default</p>
+  <h4>Header</h4>
+  <p class="sumi-graph-cell__note">Strong operational headers.</p>
+  <div class="sumi-graph-cell__stage"><table class="sumi-ledger"><thead><tr><th scope="col">Source</th><th scope="col">State</th><th scope="col">Amount</th></tr></thead></table></div>
+</article>
+  </div>
+</section>
+
+<section class="sumi-graph-row">
+  <h3>Ruled row</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="ledgers/row/default" data-cell-id="ledgers/row/default" dir="ltr" lang="en">
+  <p class="sumi-kicker">ledgers/row/default</p>
+  <h4>Row</h4>
+  <p class="sumi-graph-cell__note">Semantic row with written state.</p>
+  <div class="sumi-graph-cell__stage"><table class="sumi-ledger"><tbody><tr><td>Nile Air Store</td><td><span class="sumi-status sumi-status--healthy">Approved</span></td><td>EGP 1,240.00</td></tr></tbody></table></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Compact</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="ledgers/row/compact" data-cell-id="ledgers/row/compact" dir="ltr" lang="en">
+  <p class="sumi-kicker">ledgers/row/compact</p>
+  <h4>Compact reading order</h4>
+  <p class="sumi-graph-cell__note">Stacked compact reading order.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-ledger-stack"><div class="sumi-ledger-stack__row"><p class="sumi-kicker">Source</p><p style="margin:0">Nile Air Store</p><p class="sumi-kicker">State</p><span class="sumi-status sumi-status--healthy">Approved</span><p class="sumi-kicker">Amount</p><p style="margin:0">EGP 1,240.00</p></div></div></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Arabic RTL</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="ledgers/row/rtl" data-cell-id="ledgers/row/rtl" dir="rtl" lang="ar">
+  <p class="sumi-kicker">ledgers/row/rtl</p>
+  <h4>Arabic row</h4>
+  <p class="sumi-graph-cell__note">Translated ledger.</p>
+  <div class="sumi-graph-cell__stage"><table class="sumi-ledger"><thead><tr><th scope="col">المصدر</th><th scope="col">الحالة</th><th scope="col">المبلغ</th></tr></thead><tbody><tr><td>Nile Air Store</td><td><span class="sumi-status sumi-status--healthy">معتمد</span></td><td>1,240.00 جنيه</td></tr></tbody></table></div>
+</article>
+  </div>
+</section>
+    </section>
+<section class="sumi-graph-component" id="component-icons">
+      <header class="sumi-graph-component__header">
+        <p class="sumi-kicker">guidance</p>
+        <h2>Line iconography</h2>
+      </header>
+      
+<section class="sumi-graph-row">
+  <h3>Line icon</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell sumi-graph-cell--missing" id="icons/line/missing" data-cell-id="icons/line/missing" dir="ltr" lang="en">
+  <p class="sumi-kicker">icons/line/missing</p>
+  <h4>Line icon</h4>
+  
+  <div class="sumi-graph-cell__stage"><p class="sumi-graph-missing__label">MISSING</p><p class="sumi-graph-missing__note">Guidance only. No reference SVG or icon class yet.</p></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Compact</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell sumi-graph-cell--missing" id="icons/line/compact" data-cell-id="icons/line/compact" dir="ltr" lang="en">
+  <p class="sumi-kicker">icons/line/compact</p>
+  <h4>Compact icon</h4>
+  
+  <div class="sumi-graph-cell__stage"><p class="sumi-graph-missing__label">MISSING</p><p class="sumi-graph-missing__note">No reference markup yet. Do not invent a fake primitive.</p></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Arabic RTL</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell sumi-graph-cell--missing" id="icons/line/rtl" data-cell-id="icons/line/rtl" dir="rtl" lang="ar">
+  <p class="sumi-kicker">icons/line/rtl</p>
+  <h4>RTL icon</h4>
+  
+  <div class="sumi-graph-cell__stage"><p class="sumi-graph-missing__label">MISSING</p><p class="sumi-graph-missing__note">No reference markup yet. Do not invent a fake primitive.</p></div>
+</article>
+  </div>
+</section>
+    </section>
+<section class="sumi-graph-component" id="component-charts">
+      <header class="sumi-graph-component__header">
+        <p class="sumi-kicker">guidance</p>
+        <h2>Evidence charts</h2>
+      </header>
+      
+<section class="sumi-graph-row">
+  <h3>Chart</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell sumi-graph-cell--missing" id="charts/evidence/missing" data-cell-id="charts/evidence/missing" dir="ltr" lang="en">
+  <p class="sumi-kicker">charts/evidence/missing</p>
+  <h4>Evidence chart</h4>
+  
+  <div class="sumi-graph-cell__stage"><p class="sumi-graph-missing__label">MISSING</p><p class="sumi-graph-missing__note">Guidance only. No reference chart markup yet.</p></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Compact</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell sumi-graph-cell--missing" id="charts/evidence/compact" data-cell-id="charts/evidence/compact" dir="ltr" lang="en">
+  <p class="sumi-kicker">charts/evidence/compact</p>
+  <h4>Compact chart</h4>
+  
+  <div class="sumi-graph-cell__stage"><p class="sumi-graph-missing__label">MISSING</p><p class="sumi-graph-missing__note">No reference markup yet. Do not invent a fake primitive.</p></div>
+</article>
+  </div>
+</section>
+      
+<section class="sumi-graph-row">
+  <h3>Arabic RTL</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell sumi-graph-cell--missing" id="charts/evidence/rtl" data-cell-id="charts/evidence/rtl" dir="rtl" lang="ar">
+  <p class="sumi-kicker">charts/evidence/rtl</p>
+  <h4>RTL chart</h4>
+  
+  <div class="sumi-graph-cell__stage"><p class="sumi-graph-missing__label">MISSING</p><p class="sumi-graph-missing__note">No reference markup yet. Do not invent a fake primitive.</p></div>
+</article>
+  </div>
+</section>
+    </section>
+  </section>
+      
+<section class="sumi-graph-family" id="family-reduced-motion">
+  <h2 class="sumi-graph-family__title">Reduced motion</h2>
+  <p class="sumi-graph-family__note">Spatial movement is removed. Written state remains. This strip is page-level, not a cell inside every part.</p>
+  
+<section class="sumi-graph-row">
+  <h3>Reduced motion</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell" id="reduced-motion/button/loading" data-cell-id="reduced-motion/button/loading" dir="ltr" lang="en">
+  <p class="sumi-kicker">reduced-motion/button/loading</p>
+  <h4>Loading without motion</h4>
+  <p class="sumi-graph-cell__note">Loading remains readable when motion is reduced.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-button is-loading" type="button">Approve <span class="sumi-state">LOADING</span></button></div>
+</article>
+<article class="sumi-graph-cell" id="reduced-motion/dropdown/expanded" data-cell-id="reduced-motion/dropdown/expanded" dir="ltr" lang="en">
+  <p class="sumi-kicker">reduced-motion/dropdown/expanded</p>
+  <h4>Expanded without travel</h4>
+  <p class="sumi-graph-cell__note">Menu visibility remains when motion is reduced.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-dropdown sumi-dropdown--static"><button class="sumi-dropdown__trigger is-selected" type="button" aria-expanded="true"><span>Manual income</span><span class="sumi-dropdown__chevron" aria-hidden="true">⌄</span></button><div class="sumi-dropdown__menu"><button class="sumi-dropdown__option is-selected" type="button"><span>Manual income</span><span class="sumi-dropdown__state">SELECTED</span></button></div></div></div>
+</article>
+  </div>
+</section>
+</section>
+      
+<section class="sumi-graph-family" id="family-interaction">
+  <h2 class="sumi-graph-family__title">Motion and interaction</h2>
+  <p class="sumi-graph-family__note">These cells are live. Frozen catalog cells stay pointer-events none. Every approved reference family has one live exemplar here. Icons and charts stay MISSING until they have real primitives.</p>
+  
+<section class="sumi-graph-row">
+  <h3>Live cells</h3>
+  <div class="sumi-graph-grid">
+    <article class="sumi-graph-cell sumi-graph-cell--live" id="interaction/button/hover" data-cell-id="interaction/button/hover" dir="ltr" lang="en">
+  <p class="sumi-kicker">interaction/button/hover</p>
+  <h4>Button hover</h4>
+  <p class="sumi-graph-cell__note">Hover and press use the 160ms control duration. The action label stays put.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-button" type="button" data-graph-live>Approve</button></div>
+</article>
+<article class="sumi-graph-cell sumi-graph-cell--live" id="interaction/button/loading" data-cell-id="interaction/button/loading" dir="ltr" lang="en">
+  <p class="sumi-kicker">interaction/button/loading</p>
+  <h4>Button loading</h4>
+  <p class="sumi-graph-cell__note">Click writes LOADING on the same label. It does not invent success.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-button" type="button" data-graph-loading>Approve</button></div>
+</article>
+<article class="sumi-graph-cell sumi-graph-cell--live" id="interaction/dropdown/open" data-cell-id="interaction/dropdown/open" dir="ltr" lang="en">
+  <p class="sumi-kicker">interaction/dropdown/open</p>
+  <h4>Dropdown open</h4>
+  <p class="sumi-graph-cell__note">Open, hover, select, and dismiss in place. The menu does not travel.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-dropdown" data-dropdown data-selected-label="SELECTED"><button class="sumi-dropdown__trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="graph-live-options"><span data-dropdown-value>Manual income</span><span class="sumi-dropdown__chevron" aria-hidden="true">⌄</span></button><div class="sumi-dropdown__menu" id="graph-live-options" role="listbox" aria-label="Transaction type" hidden><button class="sumi-dropdown__option" type="button" role="option" aria-selected="true" data-value="Manual income"><span>Manual income</span><span class="sumi-dropdown__state">SELECTED</span></button><button class="sumi-dropdown__option" type="button" role="option" aria-selected="false" data-value="Manual expense"><span>Manual expense</span><span class="sumi-dropdown__state"></span></button><button class="sumi-dropdown__option sumi-dropdown__option--destructive" type="button" role="option" aria-selected="false" data-value="Adjustment"><span>Adjustment</span><span class="sumi-dropdown__state"></span></button></div></div></div>
+</article>
+<article class="sumi-graph-cell sumi-graph-cell--live" id="interaction/segmented/select" data-cell-id="interaction/segmented/select" dir="ltr" lang="en">
+  <p class="sumi-kicker">interaction/segmented/select</p>
+  <h4>Segmented select</h4>
+  <p class="sumi-graph-cell__note">Selected segment uses ink fill. Color is not the only state.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-segmented" data-graph-segmented><button class="sumi-segmented__option is-selected" type="button" aria-selected="true">List</button><button class="sumi-segmented__option" type="button" aria-selected="false">Board</button></div></div>
+</article>
+<article class="sumi-graph-cell sumi-graph-cell--live" id="interaction/toggle/press" data-cell-id="interaction/toggle/press" dir="ltr" lang="en">
+  <p class="sumi-kicker">interaction/toggle/press</p>
+  <h4>Toggle press</h4>
+  <p class="sumi-graph-cell__note">Pressed state is immediate and written into aria-pressed.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-toggle" type="button" aria-pressed="false" data-graph-toggle><span class="sumi-toggle__track" aria-hidden="true"></span><span>Auto post</span></button></div>
+</article>
+<article class="sumi-graph-cell sumi-graph-cell--live" id="interaction/tabs/switch" data-cell-id="interaction/tabs/switch" dir="ltr" lang="en">
+  <p class="sumi-kicker">interaction/tabs/switch</p>
+  <h4>Tab switch</h4>
+  <p class="sumi-graph-cell__note">Active tab uses the ink underline plus selected state.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-tabs" data-graph-tabs><button class="sumi-tabs__tab is-selected" type="button" aria-selected="true">Open</button><button class="sumi-tabs__tab" type="button" aria-selected="false">Closed</button></div></div>
+</article>
+<article class="sumi-graph-cell sumi-graph-cell--live" id="interaction/field/focus" data-cell-id="interaction/field/focus" dir="ltr" lang="en">
+  <p class="sumi-kicker">interaction/field/focus</p>
+  <h4>Field focus</h4>
+  <p class="sumi-graph-cell__note">Focus writes the seal marker. Tab or click the field.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-field"><label for="graph-live-amount">Amount</label><input id="graph-live-amount" value="1,240.00" data-graph-field /></div></div>
+</article>
+<article class="sumi-graph-cell sumi-graph-cell--live" id="interaction/date-time/edit" data-cell-id="interaction/date-time/edit" dir="ltr" lang="en">
+  <p class="sumi-kicker">interaction/date-time/edit</p>
+  <h4>Date edit</h4>
+  <p class="sumi-graph-cell__note">Edit the date. Invalid values write a correction under the field.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-field"><label for="graph-live-date">Posted on</label><input id="graph-live-date" value="2026-08-22" data-graph-date /></div></div>
+</article>
+<article class="sumi-graph-cell sumi-graph-cell--live" id="interaction/command-index/select" data-cell-id="interaction/command-index/select" dir="ltr" lang="en">
+  <p class="sumi-kicker">interaction/command-index/select</p>
+  <h4>Command index</h4>
+  <p class="sumi-graph-cell__note">Current destination uses ink inversion plus written state.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-index" data-graph-index><button class="sumi-index__item is-selected" type="button" aria-current="page">Inbox</button><button class="sumi-index__item" type="button">Ledger</button></div></div>
+</article>
+<article class="sumi-graph-cell sumi-graph-cell--live" id="interaction/app-shell/destination" data-cell-id="interaction/app-shell/destination" dir="ltr" lang="en">
+  <p class="sumi-kicker">interaction/app-shell/destination</p>
+  <h4>App shell destination</h4>
+  <p class="sumi-graph-cell__note">Switching destination rewrites CURRENT on the selected row.</p>
+  <div class="sumi-graph-cell__stage"><div class="sumi-index" data-graph-shell><button class="sumi-index__item is-selected" type="button" aria-current="page">Ledger <span class="sumi-state">CURRENT</span></button><button class="sumi-index__item" type="button">Inbox</button></div></div>
+</article>
+<article class="sumi-graph-cell sumi-graph-cell--live" id="interaction/overlay/confirm" data-cell-id="interaction/overlay/confirm" dir="ltr" lang="en">
+  <p class="sumi-kicker">interaction/overlay/confirm</p>
+  <h4>Dialog confirm</h4>
+  <p class="sumi-graph-cell__note">Cancel restores the question. Confirm writes a waiting state, not success.</p>
+  <div class="sumi-graph-cell__stage"><section class="sumi-dialog" data-graph-dialog><h3 class="sumi-dialog__header">Delete record</h3><p class="sumi-dialog__body">This removes Nile Air Store from the ledger. The action cannot be undone.</p><div class="sumi-dialog__actions"><button class="sumi-button sumi-button--quiet" type="button" data-graph-dialog-cancel>Keep record</button><button class="sumi-button sumi-button--destructive" type="button" data-graph-dialog-confirm>Delete record</button></div></section></div>
+</article>
+<article class="sumi-graph-cell sumi-graph-cell--live" id="interaction/card/open" data-cell-id="interaction/card/open" dir="ltr" lang="en">
+  <p class="sumi-kicker">interaction/card/open</p>
+  <h4>Slip open</h4>
+  <p class="sumi-graph-cell__note">Open writes OPENED on the slip. It does not leave the catalog.</p>
+  <div class="sumi-graph-cell__stage"><article class="sumi-slip" data-graph-slip><p class="sumi-kicker">Summary</p><h3 class="sumi-slip__title">Waiting review</h3><p style="margin:0 0 12px">Manual entry, EGP 320.00.</p><button class="sumi-button sumi-button--quiet sumi-button--compact" type="button" data-graph-slip-open>Open</button></article></div>
+</article>
+<article class="sumi-graph-cell sumi-graph-cell--live" id="interaction/status/cycle" data-cell-id="interaction/status/cycle" dir="ltr" lang="en">
+  <p class="sumi-kicker">interaction/status/cycle</p>
+  <h4>Status cycle</h4>
+  <p class="sumi-graph-cell__note">Click cycles Waiting, Needs review, Healthy. Color is not the only state.</p>
+  <div class="sumi-graph-cell__stage"><button class="sumi-status sumi-status--waiting" type="button" data-graph-status>Waiting</button></div>
+</article>
+<article class="sumi-graph-cell sumi-graph-cell--live" id="interaction/toast/retry" data-cell-id="interaction/toast/retry" dir="ltr" lang="en">
+  <p class="sumi-kicker">interaction/toast/retry</p>
+  <h4>Toast retry</h4>
+  <p class="sumi-graph-cell__note">Retry writes Checking, then Failed again. It does not claim success.</p>
+  <div class="sumi-graph-cell__stage"><aside class="sumi-toast sumi-toast--error" data-graph-toast><p class="sumi-kicker">Failed</p><p style="margin:0">Save did not complete. Retry the write.</p><button class="sumi-button sumi-button--quiet sumi-button--compact" type="button" data-graph-toast-retry>Retry</button></aside></div>
+</article>
+<article class="sumi-graph-cell sumi-graph-cell--live" id="interaction/empty/retry" data-cell-id="interaction/empty/retry" dir="ltr" lang="en">
+  <p class="sumi-kicker">interaction/empty/retry</p>
+  <h4>Error retry</h4>
+  <p class="sumi-graph-cell__note">Retry writes Loading, then returns to the error. Empty stays distinct from unavailable.</p>
+  <div class="sumi-graph-cell__stage"><section class="sumi-state-surface sumi-state-surface--error" data-graph-empty><p class="sumi-kicker">Error</p><h3>Ledger source unavailable</h3><p>The source did not confirm. Retry the load.</p><button class="sumi-button sumi-button--quiet sumi-button--compact" type="button" data-graph-empty-retry>Retry</button></section></div>
+</article>
+<article class="sumi-graph-cell sumi-graph-cell--live" id="interaction/ledger/select" data-cell-id="interaction/ledger/select" dir="ltr" lang="en">
+  <p class="sumi-kicker">interaction/ledger/select</p>
+  <h4>Ledger select</h4>
+  <p class="sumi-graph-cell__note">Click a row to mark it CURRENT. Selection is written, not color-only.</p>
+  <div class="sumi-graph-cell__stage"><table class="sumi-ledger" data-graph-ledger><thead><tr><th scope="col">Source</th><th scope="col">State</th><th scope="col">Amount</th></tr></thead><tbody><tr data-graph-row><td>Nile Air Store</td><td><span class="sumi-status sumi-status--healthy">Approved</span></td><td>EGP 1,240.00</td></tr><tr data-graph-row><td>Manual entry</td><td><span class="sumi-status sumi-status--waiting">Waiting</span></td><td>EGP 320.00</td></tr></tbody></table></div>
+</article>
+  </div>
+</section>
+</section>
+    </main>
+    <script src="../implementations/web/sumi-design-graph.js"></script>
+  </body>
+</html>

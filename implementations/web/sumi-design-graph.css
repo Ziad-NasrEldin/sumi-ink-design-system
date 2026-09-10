@@ -1,0 +1,171 @@
+/* Design graph catalog layout for Sumi-Ink v0.1.0. */
+
+.sumi-graph {
+  background: var(--sumi-paper);
+  color: var(--sumi-ink);
+}
+
+.sumi-graph main {
+  width: min(1280px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0 96px;
+}
+
+.sumi-graph h1,
+.sumi-graph h2,
+.sumi-graph h3,
+.sumi-graph h4 {
+  font-family: var(--sumi-typography-display-family);
+  font-weight: 400;
+}
+
+.sumi-graph h1 {
+  margin: 0 0 12px;
+  font-size: clamp(34px, 6vw, 58px);
+}
+
+.sumi-graph h2 {
+  margin: 0 0 12px;
+  font-size: 28px;
+}
+
+.sumi-graph h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.sumi-graph h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.sumi-graph p {
+  max-width: 72ch;
+  line-height: var(--sumi-typography-body-line-height);
+}
+
+.sumi-graph__header {
+  padding-bottom: 24px;
+}
+
+.sumi-graph__index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 24px;
+}
+
+.sumi-graph__index a {
+  color: var(--sumi-ink);
+  font-family: var(--sumi-typography-label-family);
+  font-size: var(--sumi-typography-label-size);
+  letter-spacing: var(--sumi-typography-label-tracking);
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid var(--sumi-rule);
+}
+
+.sumi-graph-family {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--sumi-ink);
+}
+
+.sumi-graph-family__note {
+  color: var(--sumi-muted);
+}
+
+.sumi-graph-component {
+  margin-top: 32px;
+}
+
+.sumi-graph-component__header {
+  margin-bottom: 16px;
+}
+
+.sumi-graph-row {
+  margin-top: 20px;
+}
+
+.sumi-graph-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.sumi-graph-cell {
+  min-width: 0;
+  border: 1px solid var(--sumi-rule);
+  padding: 14px;
+  background: var(--sumi-paper);
+}
+
+.sumi-graph-cell h4 {
+  margin-top: 0;
+}
+
+.sumi-graph-cell__note {
+  margin: 0 0 12px;
+  color: var(--sumi-muted);
+  font-size: 13px;
+}
+
+.sumi-graph-cell__stage {
+  pointer-events: none;
+}
+
+.sumi-graph-cell__stage button,
+.sumi-graph-cell__stage input,
+.sumi-graph-cell__stage a {
+  pointer-events: none;
+}
+
+.sumi-graph-cell--missing {
+  background: var(--sumi-mist);
+}
+
+.sumi-graph-missing__label {
+  margin: 0 0 8px;
+  font-family: var(--sumi-typography-label-family);
+  font-size: var(--sumi-typography-label-size);
+  letter-spacing: var(--sumi-typography-label-tracking);
+  text-transform: uppercase;
+}
+
+.sumi-graph-missing__note {
+  margin: 0;
+  color: var(--sumi-muted);
+}
+
+@media (max-width: 720px) {
+  .sumi-graph main {
+    width: min(100% - 24px, 560px);
+    padding-top: 28px;
+  }
+  .sumi-graph-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sumi-graph-cell--live .sumi-graph-cell__stage,
+.sumi-graph-cell--live .sumi-graph-cell__stage button,
+.sumi-graph-cell--live .sumi-graph-cell__stage input,
+.sumi-graph-cell--live .sumi-graph-cell__stage a {
+  pointer-events: auto;
+}
+
+.sumi-graph-cell--live .sumi-dropdown {
+  width: min(100%, 280px);
+}
+
+.sumi-graph-cell--live .sumi-dialog,
+.sumi-graph-cell--live .sumi-slip,
+.sumi-graph-cell--live .sumi-toast,
+.sumi-graph-cell--live .sumi-state-surface,
+.sumi-graph-cell--live .sumi-ledger {
+  width: 100%;
+}
+
+.sumi-graph-cell--live[data-cell-id="interaction/dropdown/open"] {
+  min-height: 280px;
+}

@@ -1,0 +1,1359 @@
+{
+  "version": "0.1.0",
+  "name": "Sumi-Ink Design Graph",
+  "audience": "agents-first",
+  "page": {
+    "kicker": "Sumi-Ink Command System · v0.1.0",
+    "title": "Design graph",
+    "summary": "Frozen production primitives for every approved component part and visually distinct state. Agents inspect this page. Humans may review it. It is not a product screen."
+  },
+  "families": [
+    {
+      "id": "actions",
+      "name": "Actions",
+      "components": [
+        {
+          "id": "buttons",
+          "name": "Buttons",
+          "implementation": "reference",
+          "parts": [
+            {
+              "id": "primary",
+              "name": "Primary",
+              "cells": [
+                {
+                  "id": "buttons/primary/default",
+                  "title": "Default",
+                  "html": "<button class=\"sumi-button\" type=\"button\">Approve</button>",
+                  "note": "Ink fill, paper text, 44px target.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "buttons/primary/hover",
+                  "title": "Hover",
+                  "html": "<button class=\"sumi-button is-hover\" type=\"button\">Approve</button>",
+                  "note": "Seal fill on hover.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "buttons/primary/focus",
+                  "title": "Focus",
+                  "html": "<button class=\"sumi-button is-focus\" type=\"button\">Approve</button>",
+                  "note": "Visible Sumi Seal outline.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "buttons/primary/disabled",
+                  "title": "Disabled",
+                  "html": "<button class=\"sumi-button is-disabled\" type=\"button\" disabled>Approve</button>",
+                  "note": "Mist fill, muted text, written disabled.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "buttons/primary/loading",
+                  "title": "Loading",
+                  "html": "<button class=\"sumi-button is-loading\" type=\"button\">Approve <span class=\"sumi-state\">LOADING</span></button>",
+                  "note": "Action label remains. Written loading state.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            },
+            {
+              "id": "quiet",
+              "name": "Quiet",
+              "cells": [
+                {
+                  "id": "buttons/quiet/default",
+                  "title": "Default",
+                  "html": "<button class=\"sumi-button sumi-button--quiet\" type=\"button\">Review later</button>",
+                  "note": "Paper fill, ink rule.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "buttons/quiet/hover",
+                  "title": "Hover",
+                  "html": "<button class=\"sumi-button sumi-button--quiet is-hover\" type=\"button\">Review later</button>",
+                  "note": "Soft paper hover.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            },
+            {
+              "id": "attention",
+              "name": "Attention",
+              "cells": [
+                {
+                  "id": "buttons/attention/default",
+                  "title": "Default",
+                  "html": "<button class=\"sumi-button sumi-button--attention\" type=\"button\">Commit</button>",
+                  "note": "Seal fill for attention and commitment.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            },
+            {
+              "id": "destructive",
+              "name": "Destructive",
+              "cells": [
+                {
+                  "id": "buttons/destructive/default",
+                  "title": "Default",
+                  "html": "<button class=\"sumi-button sumi-button--destructive\" type=\"button\">Delete record</button>",
+                  "note": "Seal deep fill with written consequence.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            }
+          ],
+          "environments": {
+            "compact": [
+              {
+                "id": "buttons/primary/compact",
+                "title": "Compact",
+                "html": "<button class=\"sumi-button sumi-button--compact\" type=\"button\">Approve</button>",
+                "note": "34px compact command target.",
+                "required": true,
+                "status": "ready"
+              }
+            ],
+            "rtl": [
+              {
+                "id": "buttons/primary/rtl",
+                "title": "Arabic",
+                "html": "<button class=\"sumi-button\" type=\"button\">اعتماد</button>",
+                "note": "Real Arabic action label.",
+                "required": true,
+                "status": "ready"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "selection-and-input",
+      "name": "Selection and input",
+      "components": [
+        {
+          "id": "fields",
+          "name": "Text fields",
+          "implementation": "reference",
+          "parts": [
+            {
+              "id": "input",
+              "name": "Field",
+              "cells": [
+                {
+                  "id": "fields/input/default",
+                  "title": "Default",
+                  "html": "<div class=\"sumi-field\"><label for=\"graph-amount\">Amount</label><input id=\"graph-amount\" value=\"1,240.00\" /></div>",
+                  "note": "Visible label, paper field, ink rule.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "fields/input/focus",
+                  "title": "Focus",
+                  "html": "<div class=\"sumi-field is-focus\"><label for=\"graph-amount-focus\">Amount</label><input id=\"graph-amount-focus\" value=\"1,240.00\" /></div>",
+                  "note": "Ink border plus seal marker.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "fields/input/disabled",
+                  "title": "Disabled",
+                  "html": "<div class=\"sumi-field is-disabled\"><label for=\"graph-amount-disabled\">Amount</label><input id=\"graph-amount-disabled\" value=\"1,240.00\" disabled /></div>",
+                  "note": "Mist background, muted text.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "fields/input/error",
+                  "title": "Error",
+                  "html": "<div class=\"sumi-field is-error\"><label for=\"graph-amount-error\">Amount</label><input id=\"graph-amount-error\" value=\"abc\" /><p class=\"sumi-field__message\">Enter a numeric amount.</p></div>",
+                  "note": "Danger field plus written correction.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            }
+          ],
+          "environments": {
+            "compact": [
+              {
+                "id": "fields/input/compact",
+                "title": "Compact",
+                "html": "<div class=\"sumi-field sumi-field--compact\"><label for=\"graph-amount-compact\">Amount</label><input id=\"graph-amount-compact\" value=\"1,240.00\" /></div>",
+                "note": "Compact target on the field.",
+                "required": true,
+                "status": "ready"
+              }
+            ],
+            "rtl": [
+              {
+                "id": "fields/input/rtl",
+                "title": "Arabic",
+                "html": "<div class=\"sumi-field\"><label for=\"graph-amount-rtl\">المبلغ</label><input id=\"graph-amount-rtl\" value=\"1,240.00\" /></div>",
+                "note": "Translated label, logical field order.",
+                "required": true,
+                "status": "ready"
+              }
+            ]
+          }
+        },
+        {
+          "id": "dropdown-menus",
+          "name": "Dropdown menus",
+          "implementation": "reference",
+          "parts": [
+            {
+              "id": "trigger",
+              "name": "Trigger",
+              "cells": [
+                {
+                  "id": "dropdown-menus/trigger/default",
+                  "title": "Closed",
+                  "html": "<div class=\"sumi-dropdown sumi-dropdown--static\"><button class=\"sumi-dropdown__trigger\" type=\"button\" aria-expanded=\"false\"><span>Manual income</span><span class=\"sumi-dropdown__chevron\" aria-hidden=\"true\">⌄</span></button></div>",
+                  "note": "Paper trigger, visible selected value.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "dropdown-menus/trigger/expanded",
+                  "title": "Expanded",
+                  "html": "<div class=\"sumi-dropdown sumi-dropdown--static\"><button class=\"sumi-dropdown__trigger is-selected\" type=\"button\" aria-expanded=\"true\"><span>Manual income</span><span class=\"sumi-dropdown__chevron\" aria-hidden=\"true\">⌄</span></button></div>",
+                  "note": "Expanded state is written into the trigger.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            },
+            {
+              "id": "option",
+              "name": "Option",
+              "cells": [
+                {
+                  "id": "dropdown-menus/option/default",
+                  "title": "Default",
+                  "html": "<div class=\"sumi-dropdown sumi-dropdown--static\"><div class=\"sumi-dropdown__menu\"><button class=\"sumi-dropdown__option\" type=\"button\" role=\"option\" aria-selected=\"false\"><span>Cash transfer</span><span class=\"sumi-dropdown__state\"></span></button></div></div>",
+                  "note": "Plain option, 34px minimum.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "dropdown-menus/option/hover",
+                  "title": "Hover",
+                  "html": "<div class=\"sumi-dropdown sumi-dropdown--static\"><div class=\"sumi-dropdown__menu\"><button class=\"sumi-dropdown__option is-hover\" type=\"button\" role=\"option\" aria-selected=\"false\"><span>Cash transfer</span><span class=\"sumi-dropdown__state\"></span></button></div></div>",
+                  "note": "Soft paper hover.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "dropdown-menus/option/selected",
+                  "title": "Selected",
+                  "html": "<div class=\"sumi-dropdown sumi-dropdown--static\"><div class=\"sumi-dropdown__menu\"><button class=\"sumi-dropdown__option is-selected\" type=\"button\" role=\"option\" aria-selected=\"true\"><span>Manual income</span><span class=\"sumi-dropdown__state\">SELECTED</span></button></div></div>",
+                  "note": "Ink inversion plus written SELECTED.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "dropdown-menus/option/destructive-hover",
+                  "title": "Destructive hover",
+                  "html": "<div class=\"sumi-dropdown sumi-dropdown--static\"><div class=\"sumi-dropdown__menu\"><button class=\"sumi-dropdown__option sumi-dropdown__option--destructive is-hover\" type=\"button\" role=\"option\" aria-selected=\"false\"><span>Adjustment</span><span class=\"sumi-dropdown__state\"></span></button></div></div>",
+                  "note": "Seal wash hover, seal deep text.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            },
+            {
+              "id": "divider",
+              "name": "Group divider",
+              "cells": [
+                {
+                  "id": "dropdown-menus/divider/default",
+                  "title": "Divider",
+                  "html": "<div class=\"sumi-dropdown sumi-dropdown--static\"><div class=\"sumi-dropdown__menu\"><button class=\"sumi-dropdown__option\" type=\"button\"><span>Manual income</span></button><div class=\"sumi-dropdown__divider\"></div><button class=\"sumi-dropdown__option\" type=\"button\"><span>Adjustment</span></button></div></div>",
+                  "note": "One-pixel Sumi Rule between grouped options.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            }
+          ],
+          "environments": {
+            "compact": [
+              {
+                "id": "dropdown-menus/trigger/compact",
+                "title": "Compact trigger",
+                "html": "<div class=\"sumi-dropdown sumi-dropdown--static\"><button class=\"sumi-dropdown__trigger\" type=\"button\" style=\"min-height:var(--sumi-component-sizes-compact-target)\"><span>Manual income</span><span class=\"sumi-dropdown__chevron\" aria-hidden=\"true\">⌄</span></button></div>",
+                "note": "Compact trigger height.",
+                "required": true,
+                "status": "ready"
+              }
+            ],
+            "rtl": [
+              {
+                "id": "dropdown-menus/option/rtl",
+                "title": "Arabic selected",
+                "html": "<div class=\"sumi-dropdown sumi-dropdown--static\"><div class=\"sumi-dropdown__menu\"><button class=\"sumi-dropdown__option is-selected\" type=\"button\" role=\"option\" aria-selected=\"true\"><span>دخل يدوي</span><span class=\"sumi-dropdown__state\">محدد</span></button></div></div>",
+                "note": "Translated selected stamp.",
+                "required": true,
+                "status": "ready"
+              }
+            ]
+          }
+        },
+        {
+          "id": "segmented-controls",
+          "name": "Segmented controls",
+          "implementation": "reference",
+          "parts": [
+            {
+              "id": "option",
+              "name": "Segment",
+              "cells": [
+                {
+                  "id": "segmented-controls/option/default",
+                  "title": "Unselected",
+                  "html": "<div class=\"sumi-segmented\"><button class=\"sumi-segmented__option\" type=\"button\">List</button><button class=\"sumi-segmented__option\" type=\"button\">Board</button></div>",
+                  "note": "Square segments, ink rule.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "segmented-controls/option/selected",
+                  "title": "Selected",
+                  "html": "<div class=\"sumi-segmented\"><button class=\"sumi-segmented__option is-selected\" type=\"button\" aria-selected=\"true\">List</button><button class=\"sumi-segmented__option\" type=\"button\">Board</button></div>",
+                  "note": "Ink fill, paper text.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "segmented-controls/option/disabled",
+                  "title": "Disabled",
+                  "html": "<div class=\"sumi-segmented\"><button class=\"sumi-segmented__option is-disabled\" type=\"button\" disabled>List</button><button class=\"sumi-segmented__option\" type=\"button\">Board</button></div>",
+                  "note": "Mist disabled segment.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            }
+          ],
+          "environments": {
+            "compact": [
+              {
+                "id": "segmented-controls/option/compact",
+                "title": "Compact",
+                "html": "<div class=\"sumi-segmented sumi-segmented--compact\"><button class=\"sumi-segmented__option is-selected\" type=\"button\">List</button><button class=\"sumi-segmented__option\" type=\"button\">Board</button></div>",
+                "note": "34px compact segments.",
+                "required": true,
+                "status": "ready"
+              }
+            ],
+            "rtl": [
+              {
+                "id": "segmented-controls/option/rtl",
+                "title": "Arabic",
+                "html": "<div class=\"sumi-segmented\"><button class=\"sumi-segmented__option is-selected\" type=\"button\">قائمة</button><button class=\"sumi-segmented__option\" type=\"button\">لوحة</button></div>",
+                "note": "Translated mutually exclusive modes.",
+                "required": true,
+                "status": "ready"
+              }
+            ]
+          }
+        },
+        {
+          "id": "toggles",
+          "name": "Toggles and checks",
+          "implementation": "reference",
+          "parts": [
+            {
+              "id": "toggle",
+              "name": "Toggle",
+              "cells": [
+                {
+                  "id": "toggles/toggle/off",
+                  "title": "Off",
+                  "html": "<button class=\"sumi-toggle\" type=\"button\" aria-pressed=\"false\"><span class=\"sumi-toggle__track\" aria-hidden=\"true\"></span><span>Auto post</span></button>",
+                  "note": "Written off state.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "toggles/toggle/on",
+                  "title": "On",
+                  "html": "<button class=\"sumi-toggle is-selected\" type=\"button\" aria-pressed=\"true\"><span class=\"sumi-toggle__track\" aria-hidden=\"true\"></span><span>Auto post</span></button>",
+                  "note": "Immediate on setting.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "toggles/toggle/disabled",
+                  "title": "Disabled",
+                  "html": "<button class=\"sumi-toggle is-disabled\" type=\"button\" disabled><span class=\"sumi-toggle__track\" aria-hidden=\"true\"></span><span>Auto post</span></button>",
+                  "note": "Muted disabled setting.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            },
+            {
+              "id": "check",
+              "name": "Check",
+              "cells": [
+                {
+                  "id": "toggles/check/off",
+                  "title": "Unchecked",
+                  "html": "<button class=\"sumi-check\" type=\"button\" aria-checked=\"false\"><span class=\"sumi-check__box\" aria-hidden=\"true\"></span><span>Include closed</span></button>",
+                  "note": "Independent choice.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "toggles/check/on",
+                  "title": "Checked",
+                  "html": "<button class=\"sumi-check is-selected\" type=\"button\" aria-checked=\"true\"><span class=\"sumi-check__box\" aria-hidden=\"true\"></span><span>Include closed</span></button>",
+                  "note": "Ink checked box.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "toggles/check/disabled",
+                  "title": "Disabled",
+                  "html": "<button class=\"sumi-check is-disabled\" type=\"button\" disabled><span class=\"sumi-check__box\" aria-hidden=\"true\"></span><span>Include closed</span></button>",
+                  "note": "Disabled independent choice.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            }
+          ],
+          "environments": {
+            "compact": [
+              {
+                "id": "toggles/toggle/compact",
+                "title": "Compact",
+                "html": "<button class=\"sumi-toggle\" type=\"button\" aria-pressed=\"true\" style=\"min-height:var(--sumi-component-sizes-compact-target)\"><span class=\"sumi-toggle__track\" aria-hidden=\"true\"></span><span>Auto post</span></button>",
+                "note": "Compact toggle row.",
+                "required": true,
+                "status": "ready"
+              }
+            ],
+            "rtl": [
+              {
+                "id": "toggles/toggle/rtl",
+                "title": "Arabic",
+                "html": "<button class=\"sumi-toggle is-selected\" type=\"button\" aria-pressed=\"true\"><span class=\"sumi-toggle__track\" aria-hidden=\"true\"></span><span>نشر تلقائي</span></button>",
+                "note": "Translated toggle label.",
+                "required": true,
+                "status": "ready"
+              }
+            ]
+          }
+        },
+        {
+          "id": "date-time",
+          "name": "Date and time",
+          "implementation": "reference",
+          "parts": [
+            {
+              "id": "field",
+              "name": "Date field",
+              "cells": [
+                {
+                  "id": "date-time/field/default",
+                  "title": "Default",
+                  "html": "<div class=\"sumi-field\"><label for=\"graph-date\">Posted on</label><input id=\"graph-date\" value=\"2026-08-22\" /></div>",
+                  "note": "Visible label and understandable format.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "date-time/field/focus",
+                  "title": "Focus",
+                  "html": "<div class=\"sumi-field is-focus\"><label for=\"graph-date-focus\">Posted on</label><input id=\"graph-date-focus\" value=\"2026-08-22\" /></div>",
+                  "note": "Seal marker on the date field.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "date-time/field/error",
+                  "title": "Invalid range",
+                  "html": "<div class=\"sumi-field is-error\"><label for=\"graph-date-error\">Posted on</label><input id=\"graph-date-error\" value=\"32/13/2026\" /><p class=\"sumi-field__message\">Use YYYY-MM-DD.</p></div>",
+                  "note": "Written invalid range.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            }
+          ],
+          "environments": {
+            "compact": [
+              {
+                "id": "date-time/field/compact",
+                "title": "Compact",
+                "html": "<div class=\"sumi-field sumi-field--compact\"><label for=\"graph-date-compact\">Posted on</label><input id=\"graph-date-compact\" value=\"2026-08-22\" /></div>",
+                "note": "Compact date field.",
+                "required": true,
+                "status": "ready"
+              }
+            ],
+            "rtl": [
+              {
+                "id": "date-time/field/rtl",
+                "title": "Arabic",
+                "html": "<div class=\"sumi-field\"><label for=\"graph-date-rtl\">تاريخ القيد</label><input id=\"graph-date-rtl\" value=\"2026-08-22\" /></div>",
+                "note": "Localized date label.",
+                "required": true,
+                "status": "ready"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "components": [
+        {
+          "id": "app-shell",
+          "name": "App shell",
+          "implementation": "reference",
+          "parts": [
+            {
+              "id": "destination",
+              "name": "Current destination",
+              "cells": [
+                {
+                  "id": "app-shell/destination/default",
+                  "title": "Idle destination",
+                  "html": "<button class=\"sumi-index__item\" type=\"button\">Ledger</button>",
+                  "note": "Destination label in the shell.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "app-shell/destination/selected",
+                  "title": "Current destination",
+                  "html": "<button class=\"sumi-index__item is-selected\" type=\"button\" aria-current=\"page\">Ledger <span class=\"sumi-state\">CURRENT</span></button>",
+                  "note": "Written selected destination.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            }
+          ],
+          "environments": {
+            "compact": [
+              {
+                "id": "app-shell/destination/compact",
+                "title": "Compact destination",
+                "html": "<button class=\"sumi-index__item is-selected\" type=\"button\" style=\"min-height:var(--sumi-component-sizes-compact-target)\">Ledger <span class=\"sumi-state\">CURRENT</span></button>",
+                "note": "Compact destination row.",
+                "required": true,
+                "status": "ready"
+              }
+            ],
+            "rtl": [
+              {
+                "id": "app-shell/destination/rtl",
+                "title": "Arabic destination",
+                "html": "<button class=\"sumi-index__item is-selected\" type=\"button\" aria-current=\"page\">دفتر <span class=\"sumi-state\">الحالي</span></button>",
+                "note": "Translated current destination.",
+                "required": true,
+                "status": "ready"
+              }
+            ]
+          }
+        },
+        {
+          "id": "command-index",
+          "name": "Command index",
+          "implementation": "reference",
+          "parts": [
+            {
+              "id": "item",
+              "name": "Index item",
+              "cells": [
+                {
+                  "id": "command-index/item/default",
+                  "title": "Default",
+                  "html": "<div class=\"sumi-index\"><button class=\"sumi-index__item\" type=\"button\">Inbox</button><button class=\"sumi-index__item\" type=\"button\">Ledger</button></div>",
+                  "note": "Primary routes stay discoverable.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "command-index/item/selected",
+                  "title": "Selected",
+                  "html": "<div class=\"sumi-index\"><button class=\"sumi-index__item is-selected\" type=\"button\" aria-current=\"page\">Inbox</button><button class=\"sumi-index__item\" type=\"button\">Ledger</button></div>",
+                  "note": "Ink inversion for the current route.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            },
+            {
+              "id": "trigger",
+              "name": "Collapsed trigger",
+              "cells": [
+                {
+                  "id": "command-index/trigger/collapsed",
+                  "title": "Collapsed",
+                  "html": "<button class=\"sumi-index-trigger\" type=\"button\" aria-expanded=\"false\"><span>Command index</span><span aria-hidden=\"true\">⌄</span></button>",
+                  "note": "Written menu trigger, not an icon-only control.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            }
+          ],
+          "environments": {
+            "compact": [
+              {
+                "id": "command-index/trigger/compact",
+                "title": "Compact trigger",
+                "html": "<button class=\"sumi-index-trigger\" type=\"button\" style=\"min-height:var(--sumi-component-sizes-compact-target)\"><span>Command index</span><span aria-hidden=\"true\">⌄</span></button>",
+                "note": "Compact index trigger.",
+                "required": true,
+                "status": "ready"
+              }
+            ],
+            "rtl": [
+              {
+                "id": "command-index/item/rtl",
+                "title": "Arabic item",
+                "html": "<div class=\"sumi-index\"><button class=\"sumi-index__item is-selected\" type=\"button\">وارد</button><button class=\"sumi-index__item\" type=\"button\">دفتر</button></div>",
+                "note": "Translated command index.",
+                "required": true,
+                "status": "ready"
+              }
+            ]
+          }
+        },
+        {
+          "id": "tabs",
+          "name": "Tabs",
+          "implementation": "reference",
+          "parts": [
+            {
+              "id": "tab",
+              "name": "Tab",
+              "cells": [
+                {
+                  "id": "tabs/tab/inactive",
+                  "title": "Inactive",
+                  "html": "<div class=\"sumi-tabs\"><button class=\"sumi-tabs__tab\" type=\"button\">Open</button><button class=\"sumi-tabs__tab\" type=\"button\">Closed</button></div>",
+                  "note": "Related views, same task.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "tabs/tab/active",
+                  "title": "Active",
+                  "html": "<div class=\"sumi-tabs\"><button class=\"sumi-tabs__tab is-selected\" type=\"button\" aria-selected=\"true\">Open</button><button class=\"sumi-tabs__tab\" type=\"button\">Closed</button></div>",
+                  "note": "Ink underline plus selected state.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "tabs/tab/focus",
+                  "title": "Focus",
+                  "html": "<div class=\"sumi-tabs\"><button class=\"sumi-tabs__tab is-selected is-focus\" type=\"button\" aria-selected=\"true\">Open</button><button class=\"sumi-tabs__tab\" type=\"button\">Closed</button></div>",
+                  "note": "Keyboard-visible focus.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            }
+          ],
+          "environments": {
+            "compact": [
+              {
+                "id": "tabs/tab/compact",
+                "title": "Compact",
+                "html": "<div class=\"sumi-tabs\"><button class=\"sumi-tabs__tab is-selected\" type=\"button\" style=\"min-height:var(--sumi-component-sizes-compact-target)\">Open</button><button class=\"sumi-tabs__tab\" type=\"button\" style=\"min-height:var(--sumi-component-sizes-compact-target)\">Closed</button></div>",
+                "note": "Compact tab targets.",
+                "required": true,
+                "status": "ready"
+              }
+            ],
+            "rtl": [
+              {
+                "id": "tabs/tab/rtl",
+                "title": "Arabic",
+                "html": "<div class=\"sumi-tabs\"><button class=\"sumi-tabs__tab is-selected\" type=\"button\">مفتوح</button><button class=\"sumi-tabs__tab\" type=\"button\">مغلق</button></div>",
+                "note": "Translated tab labels.",
+                "required": true,
+                "status": "ready"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "presentation",
+      "name": "Presentation",
+      "components": [
+        {
+          "id": "overlays",
+          "name": "Dialogs, sheets, and popovers",
+          "implementation": "reference",
+          "parts": [
+            {
+              "id": "dialog",
+              "name": "Dialog",
+              "cells": [
+                {
+                  "id": "overlays/dialog/header",
+                  "title": "Header",
+                  "html": "<section class=\"sumi-dialog\"><h3 class=\"sumi-dialog__header\">Delete record</h3></section>",
+                  "note": "Focused decision title.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "overlays/dialog/body",
+                  "title": "Body",
+                  "html": "<section class=\"sumi-dialog\"><p class=\"sumi-dialog__body\">This removes Nile Air Store from the ledger. The action cannot be undone.</p></section>",
+                  "note": "Object and consequence in writing.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "overlays/dialog/confirm",
+                  "title": "Confirm",
+                  "html": "<button class=\"sumi-button sumi-button--destructive\" type=\"button\">Delete record</button>",
+                  "note": "Primary confirmation action.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "overlays/dialog/cancel",
+                  "title": "Cancel",
+                  "html": "<button class=\"sumi-button sumi-button--quiet\" type=\"button\">Keep record</button>",
+                  "note": "Cancellation path does not mutate.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "overlays/dialog/destructive",
+                  "title": "Destructive confirmation",
+                  "html": "<section class=\"sumi-dialog\"><h3 class=\"sumi-dialog__header\">Delete record</h3><p class=\"sumi-dialog__body\">This removes Nile Air Store from the ledger. The action cannot be undone.</p><div class=\"sumi-dialog__actions\"><button class=\"sumi-button sumi-button--quiet\" type=\"button\">Keep record</button><button class=\"sumi-button sumi-button--destructive\" type=\"button\">Delete record</button></div></section>",
+                  "note": "Header, consequence, cancel, confirm.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            }
+          ],
+          "environments": {
+            "compact": [
+              {
+                "id": "overlays/dialog/compact",
+                "title": "Compact actions",
+                "html": "<div class=\"sumi-dialog__actions\"><button class=\"sumi-button sumi-button--quiet sumi-button--compact\" type=\"button\">Keep record</button><button class=\"sumi-button sumi-button--destructive sumi-button--compact\" type=\"button\">Delete record</button></div>",
+                "note": "Compact overlay actions.",
+                "required": true,
+                "status": "ready"
+              }
+            ],
+            "rtl": [
+              {
+                "id": "overlays/dialog/rtl",
+                "title": "Arabic dialog",
+                "html": "<section class=\"sumi-dialog\"><h3 class=\"sumi-dialog__header\">حذف السجل</h3><p class=\"sumi-dialog__body\">سيُحذف Nile Air Store من الدفتر. لا يمكن التراجع.</p><div class=\"sumi-dialog__actions\"><button class=\"sumi-button sumi-button--quiet\" type=\"button\">إبقاء السجل</button><button class=\"sumi-button sumi-button--destructive\" type=\"button\">حذف السجل</button></div></section>",
+                "note": "Translated consequence and actions.",
+                "required": true,
+                "status": "ready"
+              }
+            ]
+          }
+        },
+        {
+          "id": "cards",
+          "name": "Paper sheets and slips",
+          "implementation": "reference",
+          "parts": [
+            {
+              "id": "sheet",
+              "name": "Sheet",
+              "cells": [
+                {
+                  "id": "cards/sheet/default",
+                  "title": "Sheet",
+                  "html": "<article class=\"sumi-sheet\"><p class=\"sumi-kicker\">Evidence</p><h2 style=\"font-size:18px;margin:0 0 8px\">Nile Air Store</h2><p style=\"margin:0\">Approved bank debit, EGP 1,240.00.</p></article>",
+                  "note": "Paper surface, one-pixel rule, ink cap.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            },
+            {
+              "id": "slip",
+              "name": "Slip",
+              "cells": [
+                {
+                  "id": "cards/slip/default",
+                  "title": "Slip",
+                  "html": "<article class=\"sumi-slip\"><p class=\"sumi-kicker\">Summary</p><h3 class=\"sumi-slip__title\">Waiting review</h3><p style=\"margin:0 0 12px\">Manual entry, EGP 320.00.</p><button class=\"sumi-button sumi-button--quiet sumi-button--compact\" type=\"button\">Open</button></article>",
+                  "note": "Compact evidence plus one action.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            }
+          ],
+          "environments": {
+            "compact": [
+              {
+                "id": "cards/slip/compact",
+                "title": "Compact slip",
+                "html": "<article class=\"sumi-slip\"><p class=\"sumi-kicker\">Summary</p><h3 class=\"sumi-slip__title\">Waiting review</h3><button class=\"sumi-button sumi-button--compact\" type=\"button\">Open</button></article>",
+                "note": "Compact slip action.",
+                "required": true,
+                "status": "ready"
+              }
+            ],
+            "rtl": [
+              {
+                "id": "cards/slip/rtl",
+                "title": "Arabic slip",
+                "html": "<article class=\"sumi-slip\"><p class=\"sumi-kicker\">ملخص</p><h3 class=\"sumi-slip__title\">بانتظار المراجعة</h3><p style=\"margin:0 0 12px\">قيد يدوي، 320.00 جنيه.</p><button class=\"sumi-button sumi-button--quiet sumi-button--compact\" type=\"button\">فتح</button></article>",
+                "note": "Translated slip.",
+                "required": true,
+                "status": "ready"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "status",
+      "name": "Status",
+      "components": [
+        {
+          "id": "status-stamps",
+          "name": "Status stamps",
+          "implementation": "reference",
+          "parts": [
+            {
+              "id": "stamp",
+              "name": "Stamp",
+              "cells": [
+                {
+                  "id": "status-stamps/stamp/healthy",
+                  "title": "Healthy",
+                  "html": "<span class=\"sumi-status sumi-status--healthy\">Healthy</span>",
+                  "note": "Written healthy label.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "status-stamps/stamp/attention",
+                  "title": "Attention",
+                  "html": "<span class=\"sumi-status sumi-status--attention\">Needs review</span>",
+                  "note": "Seal wash plus written attention.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "status-stamps/stamp/waiting",
+                  "title": "Waiting",
+                  "html": "<span class=\"sumi-status sumi-status--waiting\">Waiting</span>",
+                  "note": "Written waiting, not color-only.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "status-stamps/stamp/error",
+                  "title": "Error",
+                  "html": "<span class=\"sumi-status sumi-status--error\">Unavailable</span>",
+                  "note": "Written unavailable or error.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "status-stamps/stamp/blocked",
+                  "title": "Blocked",
+                  "html": "<span class=\"sumi-status sumi-status--blocked\">Blocked</span>",
+                  "note": "Seal deep blocked state.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            }
+          ],
+          "environments": {
+            "compact": [
+              {
+                "id": "status-stamps/stamp/compact",
+                "title": "Compact pair",
+                "html": "<span class=\"sumi-status sumi-status--healthy\">Approved</span> <span class=\"sumi-status sumi-status--waiting\">Waiting</span>",
+                "note": "Dense stamp cluster.",
+                "required": true,
+                "status": "ready"
+              }
+            ],
+            "rtl": [
+              {
+                "id": "status-stamps/stamp/rtl",
+                "title": "Arabic",
+                "html": "<span class=\"sumi-status sumi-status--healthy\">سليم</span> <span class=\"sumi-status sumi-status--attention\">يحتاج مراجعة</span>",
+                "note": "Translated stamps.",
+                "required": true,
+                "status": "ready"
+              }
+            ]
+          }
+        },
+        {
+          "id": "toast-feedback",
+          "name": "Toast and inline feedback",
+          "implementation": "reference",
+          "parts": [
+            {
+              "id": "toast",
+              "name": "Toast",
+              "cells": [
+                {
+                  "id": "toast-feedback/toast/default",
+                  "title": "Short-lived",
+                  "html": "<aside class=\"sumi-toast\"><p class=\"sumi-kicker\">Saved</p><p style=\"margin:0\">Ledger row updated.</p></aside>",
+                  "note": "Short-lived feedback, no decision required.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "toast-feedback/toast/error",
+                  "title": "Failure",
+                  "html": "<aside class=\"sumi-toast sumi-toast--error\"><p class=\"sumi-kicker\">Failed</p><p style=\"margin:0\">Save did not complete. Retry the write.</p></aside>",
+                  "note": "Failure copy remains readable.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            }
+          ],
+          "environments": {
+            "compact": [
+              {
+                "id": "toast-feedback/toast/compact",
+                "title": "Compact toast",
+                "html": "<aside class=\"sumi-toast\"><p class=\"sumi-kicker\">Saved</p><p style=\"margin:0\">Row updated.</p></aside>",
+                "note": "Compact written feedback.",
+                "required": true,
+                "status": "ready"
+              }
+            ],
+            "rtl": [
+              {
+                "id": "toast-feedback/toast/rtl",
+                "title": "Arabic toast",
+                "html": "<aside class=\"sumi-toast sumi-toast--error\"><p class=\"sumi-kicker\">فشل</p><p style=\"margin:0\">لم يكتمل الحفظ. أعد المحاولة.</p></aside>",
+                "note": "Translated failure copy.",
+                "required": true,
+                "status": "ready"
+              }
+            ]
+          }
+        },
+        {
+          "id": "empty-loading-error",
+          "name": "Empty, loading, and error",
+          "implementation": "reference",
+          "parts": [
+            {
+              "id": "surface",
+              "name": "State surface",
+              "cells": [
+                {
+                  "id": "empty-loading-error/empty/default",
+                  "title": "Empty",
+                  "html": "<section class=\"sumi-state-surface\"><p class=\"sumi-kicker\">Empty</p><h3>No approved activity</h3><p>Nothing is missing from the source. Create a ledger row when work exists.</p></section>",
+                  "note": "Explains absence and next action.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "empty-loading-error/loading/default",
+                  "title": "Loading",
+                  "html": "<section class=\"sumi-state-surface\"><p class=\"sumi-kicker\">Loading</p><h3>Checking ledger source</h3><p>Waiting for the source to confirm current rows.</p></section>",
+                  "note": "Explains what is being checked.",
+                  "required": true,
+                  "status": "ready"
+                },
+                {
+                  "id": "empty-loading-error/error/default",
+                  "title": "Error",
+                  "html": "<section class=\"sumi-state-surface sumi-state-surface--error\"><p class=\"sumi-kicker\">Error</p><h3>Ledger source unavailable</h3><p>The source did not confirm. Retry the load.</p><button class=\"sumi-button sumi-button--quiet sumi-button--compact\" type=\"button\">Retry</button></section>",
+                  "note": "Names the failed operation and recovery.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            }
+          ],
+          "environments": {
+            "compact": [
+              {
+                "id": "empty-loading-error/loading/compact",
+                "title": "Compact loading",
+                "html": "<section class=\"sumi-state-surface\"><p class=\"sumi-kicker\">Loading</p><h3>Checking source</h3></section>",
+                "note": "Compact written loading.",
+                "required": true,
+                "status": "ready"
+              }
+            ],
+            "rtl": [
+              {
+                "id": "empty-loading-error/error/rtl",
+                "title": "Arabic error",
+                "html": "<section class=\"sumi-state-surface sumi-state-surface--error\"><p class=\"sumi-kicker\">خطأ</p><h3>المصدر غير متاح</h3><p>لم يؤكد المصدر. أعد التحميل.</p><button class=\"sumi-button sumi-button--quiet sumi-button--compact\" type=\"button\">إعادة المحاولة</button></section>",
+                "note": "Translated recovery.",
+                "required": true,
+                "status": "ready"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "content",
+      "name": "Content",
+      "components": [
+        {
+          "id": "ledgers",
+          "name": "Ledgers",
+          "implementation": "reference",
+          "parts": [
+            {
+              "id": "header",
+              "name": "Header",
+              "cells": [
+                {
+                  "id": "ledgers/header/default",
+                  "title": "Header",
+                  "html": "<table class=\"sumi-ledger\"><thead><tr><th scope=\"col\">Source</th><th scope=\"col\">State</th><th scope=\"col\">Amount</th></tr></thead></table>",
+                  "note": "Strong operational headers.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            },
+            {
+              "id": "row",
+              "name": "Ruled row",
+              "cells": [
+                {
+                  "id": "ledgers/row/default",
+                  "title": "Row",
+                  "html": "<table class=\"sumi-ledger\"><tbody><tr><td>Nile Air Store</td><td><span class=\"sumi-status sumi-status--healthy\">Approved</span></td><td>EGP 1,240.00</td></tr></tbody></table>",
+                  "note": "Semantic row with written state.",
+                  "required": true,
+                  "status": "ready"
+                }
+              ]
+            }
+          ],
+          "environments": {
+            "compact": [
+              {
+                "id": "ledgers/row/compact",
+                "title": "Compact reading order",
+                "html": "<div class=\"sumi-ledger-stack\"><div class=\"sumi-ledger-stack__row\"><p class=\"sumi-kicker\">Source</p><p style=\"margin:0\">Nile Air Store</p><p class=\"sumi-kicker\">State</p><span class=\"sumi-status sumi-status--healthy\">Approved</span><p class=\"sumi-kicker\">Amount</p><p style=\"margin:0\">EGP 1,240.00</p></div></div>",
+                "note": "Stacked compact reading order.",
+                "required": true,
+                "status": "ready"
+              }
+            ],
+            "rtl": [
+              {
+                "id": "ledgers/row/rtl",
+                "title": "Arabic row",
+                "html": "<table class=\"sumi-ledger\"><thead><tr><th scope=\"col\">المصدر</th><th scope=\"col\">الحالة</th><th scope=\"col\">المبلغ</th></tr></thead><tbody><tr><td>Nile Air Store</td><td><span class=\"sumi-status sumi-status--healthy\">معتمد</span></td><td>1,240.00 جنيه</td></tr></tbody></table>",
+                "note": "Translated ledger.",
+                "required": true,
+                "status": "ready"
+              }
+            ]
+          }
+        },
+        {
+          "id": "icons",
+          "name": "Line iconography",
+          "implementation": "guidance",
+          "parts": [
+            {
+              "id": "line",
+              "name": "Line icon",
+              "cells": [
+                {
+                  "id": "icons/line/missing",
+                  "title": "Line icon",
+                  "html": "",
+                  "note": "Guidance only. No reference SVG or icon class yet.",
+                  "required": false,
+                  "status": "missing"
+                }
+              ]
+            }
+          ],
+          "environments": {
+            "compact": [
+              {
+                "id": "icons/line/compact",
+                "title": "Compact icon",
+                "html": "",
+                "note": "No reference markup yet. Do not invent a fake primitive.",
+                "required": false,
+                "status": "missing"
+              }
+            ],
+            "rtl": [
+              {
+                "id": "icons/line/rtl",
+                "title": "RTL icon",
+                "html": "",
+                "note": "No reference markup yet. Do not invent a fake primitive.",
+                "required": false,
+                "status": "missing"
+              }
+            ]
+          }
+        },
+        {
+          "id": "charts",
+          "name": "Evidence charts",
+          "implementation": "guidance",
+          "parts": [
+            {
+              "id": "evidence",
+              "name": "Chart",
+              "cells": [
+                {
+                  "id": "charts/evidence/missing",
+                  "title": "Evidence chart",
+                  "html": "",
+                  "note": "Guidance only. No reference chart markup yet.",
+                  "required": false,
+                  "status": "missing"
+                }
+              ]
+            }
+          ],
+          "environments": {
+            "compact": [
+              {
+                "id": "charts/evidence/compact",
+                "title": "Compact chart",
+                "html": "",
+                "note": "No reference markup yet. Do not invent a fake primitive.",
+                "required": false,
+                "status": "missing"
+              }
+            ],
+            "rtl": [
+              {
+                "id": "charts/evidence/rtl",
+                "title": "RTL chart",
+                "html": "",
+                "note": "No reference markup yet. Do not invent a fake primitive.",
+                "required": false,
+                "status": "missing"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "reducedMotion": {
+    "id": "reduced-motion",
+    "title": "Reduced motion",
+    "note": "Spatial movement is removed. Written state remains. This strip is page-level, not a cell inside every part.",
+    "cells": [
+      {
+        "id": "reduced-motion/button/loading",
+        "title": "Loading without motion",
+        "html": "<button class=\"sumi-button is-loading\" type=\"button\">Approve <span class=\"sumi-state\">LOADING</span></button>",
+        "note": "Loading remains readable when motion is reduced.",
+        "required": true,
+        "status": "ready"
+      },
+      {
+        "id": "reduced-motion/dropdown/expanded",
+        "title": "Expanded without travel",
+        "html": "<div class=\"sumi-dropdown sumi-dropdown--static\"><button class=\"sumi-dropdown__trigger is-selected\" type=\"button\" aria-expanded=\"true\"><span>Manual income</span><span class=\"sumi-dropdown__chevron\" aria-hidden=\"true\">⌄</span></button><div class=\"sumi-dropdown__menu\"><button class=\"sumi-dropdown__option is-selected\" type=\"button\"><span>Manual income</span><span class=\"sumi-dropdown__state\">SELECTED</span></button></div></div>",
+        "note": "Menu visibility remains when motion is reduced.",
+        "required": true,
+        "status": "ready"
+      }
+    ]
+  },
+  "interaction": {
+    "id": "interaction",
+    "title": "Motion and interaction",
+    "note": "These cells are live. Frozen catalog cells stay pointer-events none. Every approved reference family has one live exemplar here. Icons and charts stay MISSING until they have real primitives.",
+    "cells": [
+      {
+        "id": "interaction/button/hover",
+        "title": "Button hover",
+        "html": "<button class=\"sumi-button\" type=\"button\" data-graph-live>Approve</button>",
+        "note": "Hover and press use the 160ms control duration. The action label stays put.",
+        "required": true,
+        "status": "ready",
+        "interactive": true
+      },
+      {
+        "id": "interaction/button/loading",
+        "title": "Button loading",
+        "html": "<button class=\"sumi-button\" type=\"button\" data-graph-loading>Approve</button>",
+        "note": "Click writes LOADING on the same label. It does not invent success.",
+        "required": true,
+        "status": "ready",
+        "interactive": true
+      },
+      {
+        "id": "interaction/dropdown/open",
+        "title": "Dropdown open",
+        "html": "<div class=\"sumi-dropdown\" data-dropdown data-selected-label=\"SELECTED\"><button class=\"sumi-dropdown__trigger\" type=\"button\" aria-haspopup=\"listbox\" aria-expanded=\"false\" aria-controls=\"graph-live-options\"><span data-dropdown-value>Manual income</span><span class=\"sumi-dropdown__chevron\" aria-hidden=\"true\">⌄</span></button><div class=\"sumi-dropdown__menu\" id=\"graph-live-options\" role=\"listbox\" aria-label=\"Transaction type\" hidden><button class=\"sumi-dropdown__option\" type=\"button\" role=\"option\" aria-selected=\"true\" data-value=\"Manual income\"><span>Manual income</span><span class=\"sumi-dropdown__state\">SELECTED</span></button><button class=\"sumi-dropdown__option\" type=\"button\" role=\"option\" aria-selected=\"false\" data-value=\"Manual expense\"><span>Manual expense</span><span class=\"sumi-dropdown__state\"></span></button><button class=\"sumi-dropdown__option sumi-dropdown__option--destructive\" type=\"button\" role=\"option\" aria-selected=\"false\" data-value=\"Adjustment\"><span>Adjustment</span><span class=\"sumi-dropdown__state\"></span></button></div></div>",
+        "note": "Open, hover, select, and dismiss in place. The menu does not travel.",
+        "required": true,
+        "status": "ready",
+        "interactive": true
+      },
+      {
+        "id": "interaction/segmented/select",
+        "title": "Segmented select",
+        "html": "<div class=\"sumi-segmented\" data-graph-segmented><button class=\"sumi-segmented__option is-selected\" type=\"button\" aria-selected=\"true\">List</button><button class=\"sumi-segmented__option\" type=\"button\" aria-selected=\"false\">Board</button></div>",
+        "note": "Selected segment uses ink fill. Color is not the only state.",
+        "required": true,
+        "status": "ready",
+        "interactive": true
+      },
+      {
+        "id": "interaction/toggle/press",
+        "title": "Toggle press",
+        "html": "<button class=\"sumi-toggle\" type=\"button\" aria-pressed=\"false\" data-graph-toggle><span class=\"sumi-toggle__track\" aria-hidden=\"true\"></span><span>Auto post</span></button>",
+        "note": "Pressed state is immediate and written into aria-pressed.",
+        "required": true,
+        "status": "ready",
+        "interactive": true
+      },
+      {
+        "id": "interaction/tabs/switch",
+        "title": "Tab switch",
+        "html": "<div class=\"sumi-tabs\" data-graph-tabs><button class=\"sumi-tabs__tab is-selected\" type=\"button\" aria-selected=\"true\">Open</button><button class=\"sumi-tabs__tab\" type=\"button\" aria-selected=\"false\">Closed</button></div>",
+        "note": "Active tab uses the ink underline plus selected state.",
+        "required": true,
+        "status": "ready",
+        "interactive": true
+      },
+      {
+        "id": "interaction/field/focus",
+        "title": "Field focus",
+        "html": "<div class=\"sumi-field\"><label for=\"graph-live-amount\">Amount</label><input id=\"graph-live-amount\" value=\"1,240.00\" data-graph-field /></div>",
+        "note": "Focus writes the seal marker. Tab or click the field.",
+        "required": true,
+        "status": "ready",
+        "interactive": true
+      },
+      {
+        "id": "interaction/date-time/edit",
+        "title": "Date edit",
+        "html": "<div class=\"sumi-field\"><label for=\"graph-live-date\">Posted on</label><input id=\"graph-live-date\" value=\"2026-08-22\" data-graph-date /></div>",
+        "note": "Edit the date. Invalid values write a correction under the field.",
+        "required": true,
+        "status": "ready",
+        "interactive": true
+      },
+      {
+        "id": "interaction/command-index/select",
+        "title": "Command index",
+        "html": "<div class=\"sumi-index\" data-graph-index><button class=\"sumi-index__item is-selected\" type=\"button\" aria-current=\"page\">Inbox</button><button class=\"sumi-index__item\" type=\"button\">Ledger</button></div>",
+        "note": "Current destination uses ink inversion plus written state.",
+        "required": true,
+        "status": "ready",
+        "interactive": true
+      },
+      {
+        "id": "interaction/app-shell/destination",
+        "title": "App shell destination",
+        "html": "<div class=\"sumi-index\" data-graph-shell><button class=\"sumi-index__item is-selected\" type=\"button\" aria-current=\"page\">Ledger <span class=\"sumi-state\">CURRENT</span></button><button class=\"sumi-index__item\" type=\"button\">Inbox</button></div>",
+        "note": "Switching destination rewrites CURRENT on the selected row.",
+        "required": true,
+        "status": "ready",
+        "interactive": true
+      },
+      {
+        "id": "interaction/overlay/confirm",
+        "title": "Dialog confirm",
+        "html": "<section class=\"sumi-dialog\" data-graph-dialog><h3 class=\"sumi-dialog__header\">Delete record</h3><p class=\"sumi-dialog__body\">This removes Nile Air Store from the ledger. The action cannot be undone.</p><div class=\"sumi-dialog__actions\"><button class=\"sumi-button sumi-button--quiet\" type=\"button\" data-graph-dialog-cancel>Keep record</button><button class=\"sumi-button sumi-button--destructive\" type=\"button\" data-graph-dialog-confirm>Delete record</button></div></section>",
+        "note": "Cancel restores the question. Confirm writes a waiting state, not success.",
+        "required": true,
+        "status": "ready",
+        "interactive": true
+      },
+      {
+        "id": "interaction/card/open",
+        "title": "Slip open",
+        "html": "<article class=\"sumi-slip\" data-graph-slip><p class=\"sumi-kicker\">Summary</p><h3 class=\"sumi-slip__title\">Waiting review</h3><p style=\"margin:0 0 12px\">Manual entry, EGP 320.00.</p><button class=\"sumi-button sumi-button--quiet sumi-button--compact\" type=\"button\" data-graph-slip-open>Open</button></article>",
+        "note": "Open writes OPENED on the slip. It does not leave the catalog.",
+        "required": true,
+        "status": "ready",
+        "interactive": true
+      },
+      {
+        "id": "interaction/status/cycle",
+        "title": "Status cycle",
+        "html": "<button class=\"sumi-status sumi-status--waiting\" type=\"button\" data-graph-status>Waiting</button>",
+        "note": "Click cycles Waiting, Needs review, Healthy. Color is not the only state.",
+        "required": true,
+        "status": "ready",
+        "interactive": true
+      },
+      {
+        "id": "interaction/toast/retry",
+        "title": "Toast retry",
+        "html": "<aside class=\"sumi-toast sumi-toast--error\" data-graph-toast><p class=\"sumi-kicker\">Failed</p><p style=\"margin:0\">Save did not complete. Retry the write.</p><button class=\"sumi-button sumi-button--quiet sumi-button--compact\" type=\"button\" data-graph-toast-retry>Retry</button></aside>",
+        "note": "Retry writes Checking, then Failed again. It does not claim success.",
+        "required": true,
+        "status": "ready",
+        "interactive": true
+      },
+      {
+        "id": "interaction/empty/retry",
+        "title": "Error retry",
+        "html": "<section class=\"sumi-state-surface sumi-state-surface--error\" data-graph-empty><p class=\"sumi-kicker\">Error</p><h3>Ledger source unavailable</h3><p>The source did not confirm. Retry the load.</p><button class=\"sumi-button sumi-button--quiet sumi-button--compact\" type=\"button\" data-graph-empty-retry>Retry</button></section>",
+        "note": "Retry writes Loading, then returns to the error. Empty stays distinct from unavailable.",
+        "required": true,
+        "status": "ready",
+        "interactive": true
+      },
+      {
+        "id": "interaction/ledger/select",
+        "title": "Ledger select",
+        "html": "<table class=\"sumi-ledger\" data-graph-ledger><thead><tr><th scope=\"col\">Source</th><th scope=\"col\">State</th><th scope=\"col\">Amount</th></tr></thead><tbody><tr data-graph-row><td>Nile Air Store</td><td><span class=\"sumi-status sumi-status--healthy\">Approved</span></td><td>EGP 1,240.00</td></tr><tr data-graph-row><td>Manual entry</td><td><span class=\"sumi-status sumi-status--waiting\">Waiting</span></td><td>EGP 320.00</td></tr></tbody></table>",
+        "note": "Click a row to mark it CURRENT. Selection is written, not color-only.",
+        "required": true,
+        "status": "ready",
+        "interactive": true
+      }
+    ]
+  }
+}
